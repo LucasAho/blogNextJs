@@ -4,14 +4,14 @@ import Col from 'react-bootstrap/Col';
 
 export default function SectionHeader(props) {
     let colorString = props.color;
-    let hex  = (colorString == "light" ? "#FFFFFF" : "#000000")
+    let colorClassSelector  = (colorString == "light" ? "light-text" : "dark-text")
     return (
         <Container fluid="xl">
             <Row className="justify-content-center">
-                <Col sm="12" as="h1" className="text-center" style={{color: hex}}>
+                <Col sm="12" as="h3" className={`text-center ${ colorClassSelector }`}>
                     {props.titleText}
                 </Col>
-                <Col sm="9" as={props.variant} className="text-center" style={{color: hex}}>
+                <Col sm="9" as={props.variant} className={`text-center ${ colorClassSelector }`}>
                     {props.subText}
                 </Col>
             </Row>

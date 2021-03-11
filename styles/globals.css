@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.light-text {
+  color: #FFFFFF
+}
+.dark-text {
+  color: #000000
+}
