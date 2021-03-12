@@ -97,6 +97,22 @@ export default function PortfolioPage() {
                     />*/}
                 </Row>
             </Container>
+            <Container className="py-3"> 
+                <SectionHeader
+                    titleText="The Creative Process"
+                    subText="A blog where I share a mixture of politically minded essays, stories of my personal walk through life, and my thoughts on the importance of art and creativity" 
+                    variant="p"
+                    color="light"
+                /> 
+                <Row>
+                    {/*
+                        Big card component
+                        
+                        two little card components
+                    
+                    */}
+                </Row>
+            </Container>
         </Container>
     )
 }
