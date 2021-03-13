@@ -3,8 +3,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 import SectionHeader from "../components/portfolioSectionHeader";
-import PortfolioCard from "../components/portfolioCard";
 import CardCarousel from "../components/cardCarousel";
+import BigCard from "../components/bigBlogCard";
+import SmallCard from "../components/smallBlogCard";
+import Card from "react-bootstrap/Card";
+import Footer from "../components/footer"
 
 export default function PortfolioPage() {
     return (
@@ -97,22 +100,45 @@ export default function PortfolioPage() {
                     />*/}
                 </Row>
             </Container>
-            <Container className="py-3"> 
+            <Container className="py-3" style={{backgroundColor: "#180D35"}}> 
                 <SectionHeader
                     titleText="The Creative Process"
                     subText="A blog where I share a mixture of politically minded essays, stories of my personal walk through life, and my thoughts on the importance of art and creativity" 
                     variant="p"
                     color="light"
                 /> 
-                <Row>
-                    {/*
-                        Big card component
-                        
-                        two little card components
-                    
-                    */}
+                <Row className="px-3">
+                    <Col md='6' className="my-2">
+                        <BigCard/>
+                    </Col>
+                    <Col md='6'>
+                        <SmallCard className="my-1"
+                            set = '2'
+                        />
+                        <SmallCard className="my-1"
+                            set = '3'
+                        />
+                    </Col>
                 </Row>
             </Container>
+            <Container className="py-3" >
+                <SectionHeader
+                    titleText="Podcast"
+                    subText="Upcoming podcast talking about the importance of creativity and art" 
+                    variant="p"
+                    color="dark"
+                /> 
+
+                <Card className="my-2" style={{ width: '60%' }}>
+                    <Card.Body>
+                        <Card.Title>Episode 1</Card.Title>
+                        <Card.Text>
+                            Expected release date: Apr 5, 2021
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Container>
+            <Footer/> 
         </Container>
     )
 }
