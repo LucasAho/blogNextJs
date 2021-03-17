@@ -8,7 +8,7 @@ export default function SectionHeader(props) {
     return (
         <Container fluid="xl">
             <Row className="justify-content-center">
-                <Col sm="12" as="h3" className={`text-center ${ colorClassSelector }`}>
+                <Col sm="12" as="h2" className={`text-center ${ colorClassSelector }`}>
                     {props.titleText}
                 </Col>
                 <Col sm="9" as={props.variant} className={`text-center ${ colorClassSelector }`}>

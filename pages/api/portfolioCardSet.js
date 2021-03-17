@@ -30,8 +30,8 @@ export const CardSet = [
     {
         img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1280px-Good_Food_Display_-_NCI_Visuals_Online.jpg",
         title: "Chuck Wagon",
-        descript: "Pantry starting to look sparse? Find out what recipes you can still make with the few ingredients you have left.",
-        link: "https://chuck-wagon.herokuapp.com/login",
+        descript: "Pantry starting to look sparse? Find out what recipes you can still make.", 
+        link: "https://chuck-wagon.herokuapp.com",
         codeLink: "https://github.com/kbrowngithub/Project3"
     }
 ]

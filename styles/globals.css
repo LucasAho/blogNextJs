@@ -21,3 +21,31 @@ a {
 .dark-text {
   color: #000000
 }
+
+.contrast-bg {
+  background-color: #DCF1F9;
+}
+
+.blue-bg {
+  background-color: #2E8CA3 !important;
+  border-color: #2E8CA3 !important;
+  opacity: 50%;
+  z-index: 10;
+}
+.blue-bg:hover {
+  opacity: 100%;
+}
+.purple-bg {
+  background-color: #180D35;
+}
+.menu-scroller {
+  position: fixed;
+  transition: top 0.6s;
+  top: 0;
+  padding: 1rem;
+}
+
+
+.pointer-cursor:hover {
+  cursor: pointer;
+}

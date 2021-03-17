@@ -12,5 +12,6 @@ const API = {
     getMostRecent: function() {
         return axios.get(queryURL + "find/recent");
     }
+    
 }
 export default API;
