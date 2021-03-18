@@ -4,6 +4,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export default class ArticlePage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isLoaded: false,
+            data: null
+        };
+    }
     render() {
         return (
             <Container>

@@ -2,8 +2,8 @@ import { Container, Navbar } from "react-bootstrap";
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ContactForm from "./contactForm";
 
 export default function Footer() {
     const [show, setShow] = useState(false);
@@ -12,8 +12,8 @@ export default function Footer() {
     const handleShow = () => setShow(true);
 
     return (
-        <Container className="text-center my-2">
-            <Navbar className="justify-content-center" bg="light" expand="md">
+        <Container className="text-center contrast-bg my-2">
+            <Navbar className="justify-content-center" expand="md">
                 <Navbar.Brand className="mx-4" href="https://www.linkedin.com/in/lucas-asher-679569193/">
                     <FontAwesomeIcon icon={['fab', 'linkedin']} />
                 </Navbar.Brand>
@@ -28,27 +28,13 @@ export default function Footer() {
                 </Navbar.Brand>
             </Navbar>
             <Modal show={show} onHide={handleClose}>
-                <Form className="mx-3">
-                    <Form.Group controlId="contactForm.ControlInput1">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type="name" placeholder="Marvarax Thufolk" />
-                    </Form.Group>
-                    <Form.Group controlId="contactForm.ControlInput2">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="name@example.com" />
-                    </Form.Group>
-                    <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Message</Form.Label>
-                        <Form.Control as="textarea" rows={3} />
-                    </Form.Group>
-                </Form>
+                <ContactForm
+                    cb={handleClose}
+                />
                 <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Send
-                </Button>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
                 </Modal.Footer>
             </Modal>
             Copyright©
