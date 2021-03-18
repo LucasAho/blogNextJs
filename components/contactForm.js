@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 
 export default function ContactForm(props) {
     return (
-        <Form className="mx-3" name='contact' action='/success' method="POST" data-netlify='true'>
+        <form className="mx-3" name='contact' action='/success' method="POST" netlify-honeypot='bot-field' data-netlify='true'>
             <input type="hidden" name="form-name" value="contact" />
             <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
                 <Form.Label htmlFor="yourname">Name</Form.Label>
@@ -20,6 +20,6 @@ export default function ContactForm(props) {
             <Button type='submit' onClick={() => props.cb()}>
                 Send
             </Button>
-        </Form>
+        </form>
     )
 }
