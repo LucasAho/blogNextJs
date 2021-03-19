@@ -7,9 +7,11 @@ import ContactForm from "./contactForm";
 
 export default function Footer() {
     const [show, setShow] = useState(false);
+    const [sent, setSent] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleSent = () => setSent(true);
 
     return (
         <Container className="text-center contrast-bg my-2">
@@ -28,11 +30,9 @@ export default function Footer() {
                 </Navbar.Brand>
             </Navbar>
             <Modal show={show} onHide={handleClose}>
-                <ContactForm
-                    cb={handleClose}
-                />
+                <ContactForm />
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button className="contrast-bg dark-text" onClick={handleClose}>
                         Close
                     </Button>
                 </Modal.Footer>

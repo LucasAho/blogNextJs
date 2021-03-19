@@ -10,6 +10,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
+import ContactForm from './contactForm';
 
 export default function BlogNav() {
     const [show, setShow] = useState(false);
@@ -50,26 +51,10 @@ export default function BlogNav() {
                             </Nav>
                         </Navbar.Collapse>
                         <Modal show={show} onHide={handleClose}>
-                            <Form className="mx-3">
-                                <Form.Group controlId="contactForm.ControlInput1">
-                                    <Form.Label>Name</Form.Label>
-                                    <Form.Control type="name" placeholder="Marvarax Thufolk" />
-                                </Form.Group>
-                                <Form.Group controlId="contactForm.ControlInput2">
-                                    <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="name@example.com" />
-                                </Form.Group>
-                                <Form.Group controlId="exampleForm.ControlTextarea1">
-                                    <Form.Label>Message</Form.Label>
-                                    <Form.Control as="textarea" rows={3} />
-                                </Form.Group>
-                            </Form>
+                            <ContactForm />
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
+                                <Button className="contrast-bg dark-text" onClick={handleClose}>
                                     Close
-                                </Button>
-                                <Button variant="primary" onClick={handleClose}>
-                                    Send
                                 </Button>
                             </Modal.Footer>
                         </Modal>
