@@ -45,7 +45,7 @@ export default function BlogNav(props) {
                                 <Navbar.Brand className="mx-1" href="https://github.com/LucasAho">
                                     <FontAwesomeIcon icon={['fab', 'github']} />
                                 </Navbar.Brand>
-                                <Navbar.Brand className="mx-1 pointer-cursor" onClick={props.handleShow()}>
+                                <Navbar.Brand className="mx-1 pointer-cursor" onClick={() => props.handleShow}>
                                     <FontAwesomeIcon icon={['fas', 'envelope']} />
                                 </Navbar.Brand>
                             </Nav>
