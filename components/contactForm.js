@@ -8,7 +8,7 @@ export default function ContactForm(props) {
     return (
         <Container>
             { sent !== true ?
-                <form className="mx-3" action={setSent(true)} name='portfolio-contact' method="POST" data-netlify='true'>
+                <form className="mx-3" name='portfolio-contact' method="POST" data-netlify='true'>
                     <input type="hidden" name="portfolio-contact" value="contact" />
                     <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
                         <Form.Label htmlFor="yourname">Name</Form.Label>
@@ -22,7 +22,7 @@ export default function ContactForm(props) {
                         <Form.Label htmlFor='message-content'>Message</Form.Label>
                         <Form.Control as="textarea" name='message' rows={3} id='message-content' />
                     </Form.Group>
-                    <Button type='submit' className="blue-bg">
+                    <Button type='submit' onClick={() => setSent(true)} className="blue-bg">
                         Send
                     </Button>
                 </form>
