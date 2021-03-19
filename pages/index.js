@@ -25,7 +25,7 @@ export default function Home() {
       </Head>
 
       <Container>
-          <BlogNav handleShow = {() => handleShow}/>
+          <BlogNav handleShow = {handleShow}/>
           <Row>
             <Col className="sm-6">
               <BigPanel/>
