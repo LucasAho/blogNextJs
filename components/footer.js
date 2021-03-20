@@ -14,7 +14,7 @@ export default function Footer() {
     const handleSent = () => setSent(true);
 
     return (
-        <Container className="text-center contrast-bg my-2">
+        <Container className="text-center contrast-bg mt-2">
             <Navbar className="justify-content-center" expand="md">
                 <Navbar.Brand className="mx-4" href="https://www.linkedin.com/in/lucas-asher-679569193/">
                     <FontAwesomeIcon icon={['fab', 'linkedin']} />
