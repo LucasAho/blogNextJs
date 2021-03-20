@@ -2,6 +2,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Link from 'next/Link';
+
 
 export default function PresentationComponent(props) {
     const data = props.data;
@@ -17,7 +19,9 @@ export default function PresentationComponent(props) {
                 <Card.Text>
                     {data.blurb}
                 </Card.Text>
-                <Button className="stretched-link" href={"/post/" + data._id}>Open Article</Button>
+                <Link href={{ pathname: '/post', query: { id: data._id } }}>
+                    <Button className="stretched-link">Open Article</Button>
+                </Link>
             </Card.Body>
         </Card>
     )

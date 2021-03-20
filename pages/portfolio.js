@@ -128,7 +128,7 @@ export default function PortfolioPage() {
                                     <Card.Title>Episode 1</Card.Title>
                                     <Card.Text>
                                         Expected release date: Apr 5, 2021
-                                </Card.Text>
+                                    </Card.Text>
                                 </Card.Body>
                             </Col>
                             <Col sm={9}>

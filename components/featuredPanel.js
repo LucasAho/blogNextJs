@@ -1,31 +1,34 @@
 import { Component } from "react";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
-export class BigPanel extends Component{
+import Link from 'next/Link';
+
+export class BigPanel extends Component {
     render() {
-        return(
+        return (
             <Card className="text-white">
                 <Card.Img style={{ width: 300, height: 550 }} src="https://asucla.ucla.edu/v2/wp-content/uploads/2016/02/placeholder-image-tall.png" alt="Card image" />
                 <Card.ImgOverlay>
                     <Card.Title>The First Pillar of O'radren</Card.Title>
                     <Card.Text>
-                        The first of six pillars supporting Oradren's Temple. 
+                        The first of six pillars supporting Oradren's Temple.
                         Analogous to the Judaic ten commandments in Rohiren orthodox faith.
                     </Card.Text>
-                    <Card.Link className='stretched-link' href="/article">
-                        Article
-                    </Card.Link>
+                    <Link href={{ pathname: '/post', query: { id: "60340ddb95cb383ea4723058" } }}>
+                        <Button className="stretched-link">Open Article</Button>
+                    </Link>
                 </Card.ImgOverlay>
             </Card>
         )
     }
 }
 
-export class SmallPanel extends Component{
+export class SmallPanel extends Component {
     render() {
-        return(
+        return (
             <Card className="bg-dark text-white">
-                <Card.Img style={{ height: 225,  width: 400 }} src="https://i.imgur.com/it5vjBg.png" alt="Card image" />
+                <Card.Img style={{ height: 225, width: 400 }} src="https://i.imgur.com/it5vjBg.png" alt="Card image" />
                 <Card.ImgOverlay>
                     <Card.Title>Escaping Suicide</Card.Title>
                     <Card.Text>
