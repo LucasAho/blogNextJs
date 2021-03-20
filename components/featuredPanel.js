@@ -2,7 +2,7 @@ import { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-import Link from 'next/Link';
+import Link from 'next/link';
 
 export class BigPanel extends Component {
     render() {

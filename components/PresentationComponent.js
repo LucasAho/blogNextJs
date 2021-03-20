@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 
 export default function PresentationComponent(props) {
