@@ -16,7 +16,7 @@ export default function MenuButton() {
     }
     return (
         <Dropdown>
-            <Dropdown.Toggle variant='secondary' className="blue-bg menu-scroller">
+            <Dropdown.Toggle className="primary-btn menu-scroller">
                 <FontAwesomeIcon icon={['fas', 'bars']} />
             </Dropdown.Toggle>
             <Dropdown.Menu>
@@ -24,7 +24,6 @@ export default function MenuButton() {
                 <Dropdown.Item onClick={()=> handleScroll('bio')}>Bio</Dropdown.Item>
                 <Dropdown.Item onClick={()=> handleScroll('port')}>Portfolio</Dropdown.Item>
                 <Dropdown.Item onClick={()=> handleScroll('blog')}>Blog</Dropdown.Item>
-                <Dropdown.Item onClick={()=> handleScroll('podcast')}>Podcast</Dropdown.Item>
                 <Dropdown.Item onClick={()=> handleScroll('contact')}>Contact Info</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>

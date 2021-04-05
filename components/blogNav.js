@@ -21,13 +21,13 @@ export default function BlogNav(props) {
         <Row className='my-2'>
             <Jumbotron className="text-center contrast-bg ">
                 <Container className='my-2 py-2'>
-                    <h1>The Creative Process</h1>
-                    <Navbar className="contrast-bg" expand="sm">
+                    <h1>The Creative Spectrum</h1>
+                    <Navbar className="contrast-bg" expand="md">
                         <Navbar.Brand href="/">Home</Navbar.Brand>
+                        <Nav.Link className="nav-portfolio-link" href="/portfolio">Portfolio</Nav.Link>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse>
                             <Nav className="mr-auto nav-justified" variant='pills'>
-                                <Nav.Link href="/portfolio">Portfolio</Nav.Link>
                                 <NavDropdown title="Topics">
                                     <NavDropdown.Item href="#">Mental Health</NavDropdown.Item>
                                     <NavDropdown.Item href="#">Conlangs</NavDropdown.Item>
@@ -35,30 +35,20 @@ export default function BlogNav(props) {
                                     <NavDropdown.Item href="#">Poetry</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
-                            <Nav className="justify-content-end">
-                                <Navbar.Brand className="mx-1" href="https://www.linkedin.com/in/lucas-asher-679569193/">
-                                    <FontAwesomeIcon icon={['fab', 'linkedin']} />
-                                </Navbar.Brand>
-                                <Navbar.Brand className="mx-1" href="https://www.instagram.com/lucas_asher_a/?hl=en">
-                                    <FontAwesomeIcon icon={['fab', 'instagram']} />
-                                </Navbar.Brand>
-                                <Navbar.Brand className="mx-1" href="https://github.com/LucasAho">
-                                    <FontAwesomeIcon icon={['fab', 'github']} />
-                                </Navbar.Brand>
-                                <Navbar.Brand className="mx-1 pointer-cursor" onClick={() => props.handleShow}>
-                                    <FontAwesomeIcon icon={['fas', 'envelope']} />
-                                </Navbar.Brand>
-                            </Nav>
+                            <Form inline>
+                                <FormControl type="text" placeholder="Non-functional..." className="mr-sm-2" />
+                                <Button variant="outline-success">Search</Button>
+                            </Form>
                         </Navbar.Collapse>
-                        <Modal show={show} onHide={handleClose}>
-                            <ContactForm />
-                            <Modal.Footer>
-                                <Button className="contrast-bg dark-text" onClick={handleClose}>
-                                    Close
-                                </Button>
-                            </Modal.Footer>
-                        </Modal>
                     </Navbar>
+                    <Modal show={show} onHide={handleClose}>
+                        <ContactForm />
+                        <Modal.Footer>
+                            <Button className="contrast-bg dark-text" onClick={handleClose}>
+                                Close
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
                 </Container>
             </Jumbotron>
         </Row>

@@ -5,8 +5,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import SectionHeader from "../components/portfolioSectionHeader";
 import CardCarousel from "../components/cardCarousel";
 import CardPanel from "../components/blogCardCompiler";
-import Card from "react-bootstrap/Card";
-import Footer from "../components/footer"
+import { Footer } from "../components/footer2"
 import MenuButton from "../components/menuButton";
 import { Element } from 'react-scroll';
 
@@ -105,37 +104,12 @@ export default function PortfolioPage() {
             <Element id='blog' name='blog'>
                 <Container className="py-3" style={{ backgroundColor: "#180D35" }}>
                     <SectionHeader
-                        titleText="The Creative Process"
+                        titleText="The Creative Spectrum"
                         subText="My blog for sharing my creative works and my philosophies behind them"
                         variant="p"
                         color="light"
                     />
                     <CardPanel />
-                </Container>
-            </Element>
-            <Element name="podcast" id="podcast">
-                <Container className="py-3 justify-content-center" >
-                    <SectionHeader
-                        titleText="Podcast"
-                        subText="Upcoming podcast discussing the importance of creativity and art for mental health"
-                        variant="p"
-                        color="dark"
-                    />
-                    <Card className="my-2 justify-content-center mx-auto" style={{ width: '80%' }}>
-                        <Row>
-                            <Col sm={3}>
-                                <Card.Body>
-                                    <Card.Title>Episode 1</Card.Title>
-                                    <Card.Text>
-                                        Expected release date: Apr 5, 2021
-                                    </Card.Text>
-                                </Card.Body>
-                            </Col>
-                            <Col sm={9}>
-                                <Card.Img alt="WiP" style={{ width: '80%' }} src="https://t3.ftcdn.net/jpg/03/05/40/20/360_F_305402093_Xjwbp9xAfRElg7vD6eOAOe8BcYRLOqal.jpg" />
-                            </Col>
-                        </Row>
-                    </Card>
                 </Container>
             </Element>
             <Element name='contact' id='contact'>

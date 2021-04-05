@@ -31,6 +31,14 @@ a {
   background-color: #2E8CA3 !important;
   border-color: #2E8CA3 !important;
 }
+.primary-btn {
+  background-color: #2E8CA3 !important;
+  border-color: #2E8CA3 !important;
+}
+.primary-btn:active {
+  box-shadow: #2E8CA3 !important;
+  outline: #2E8CA3 !important;
+}
 .blue-bg:hover {
   opacity: 100%;
 }
@@ -46,7 +54,19 @@ a {
   padding: 1rem;
 }
 
+.nav-portfolio-link {
+  text-decoration: none;
+  color: black;
+}
+.nav-portfolio-link:active {
+  color: #bec7ca;
+}
 
 .pointer-cursor:hover {
   cursor: pointer;
+}
+
+.article-img {
+  width: 100%;
+  align-items: center;
 }

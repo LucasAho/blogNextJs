@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Footer from "../components/footer";
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { BigPanel } from '../components/featuredPanel'
+import { BigPanel, SmallPanel } from '../components/featuredPanel'
 import BlogNav from '../components/blogNav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ContactForm from '../components/contactForm';
@@ -26,12 +25,14 @@ export default function Home() {
 
       <Container>
           <BlogNav handleShow = {handleShow}/>
+          Please note site is very much under construction
           <Row>
             <Col className="sm-6">
               <BigPanel/>
               {/*  Big card */}
             </Col>
             <Col className="sm-3">
+              <SmallPanel/>
               {/*  Two small cards */}
             </Col>
             <Col className="sm-3">
@@ -39,17 +40,6 @@ export default function Home() {
             </Col>
           </Row>
       </Container>
-      {/*<Footer/>*/}
-
-            <Modal show={show} onHide={handleClose}>
-                <ContactForm />
-                <Modal.Footer>
-                    <Button className="contrast-bg dark-text" onClick={handleClose}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-  
     </div>
   )
 }

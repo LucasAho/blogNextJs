@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/Col';
 import API from "../pages/api/blog";
 import Spinner from 'react-bootstrap/Spinner';
 
+
+
 export default class Article extends Component {
     constructor(props) {
         super(props);
@@ -16,47 +18,40 @@ export default class Article extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.articleId);
-        console.log('anything?')
-        /*API.getPostById(this.props.id)
-
+        API.getPostById(this.props.articleId)
             .then(res => this.setState({
                 ...this.state,
                 isLoaded: true,
                 data: res.data
             })
-            )*/
+            )
     }
     render() {
         const { isLoaded, data } = this.state;
-        console.log("hey  ", this.props.articleId);
         return (
             (
                 isLoaded ?
                     <Container>
                         <Row>
-                            <Col sm='8'>
+                            <Col md='8'>
                                 <h2>{data.title}</h2>
-                                <h2>{this.props.id}</h2>
                                 <p>
-                                    Written: {data.dateWritten}
-                                </p>
-                                <p>
+                                    Date: {data.dateWritten} |
                                     Topic: {data.genre}
                                 </p>
+                                <h6 className='mx-4'>{data.blurb}</h6>
                             </Col>
-                            <Col sm='4'>
-                                <img src={data.image} />
+                            <Col className='my-auto' md='4'>
+                                <img className="mt-1 article-img" src={data.image} />
                             </Col>
                         </Row>
-                        <Row>
-                            <h6>{data.blurb}</h6>
-                        </Row>
-                        <Row>
-                            {data.paragraphs.map(p => {
-                                <div>
-                                    {p}
-                                </div>
+                        <Row className='mr-1 mt-3'>
+                            {data.paragraphs.map((p,i) => {
+                                return (
+                                    <div key={i++}>
+                                        {p} 
+                                    </div>
+                                )
                             })}
                         </Row>
                     </Container>

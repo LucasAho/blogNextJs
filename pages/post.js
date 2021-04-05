@@ -5,31 +5,30 @@ import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Article from './../components/article';
+import SidebarContent from '../components/SidebarContent';
+import { Footer } from '../components/footer2';
 
 const Post = () => {
     const {
         query: { id },
     } = useRouter();
-
-
-    //console.log(router)
+    
     return (
         <Container>
-            <BlogNav
-            />
+            <BlogNav/>
             <Row>
-                <Col md={10}>
-                    {id}
-                    {console.log(id)}
-                    {/*<Article articleId={id} / >*/}
+                <Col md={9}>
+                    {id !== undefined ?
+                        (<Article articleId = {id} />)
+                    :
+                    null
+                    }
                 </Col>
-                <Col md={2}>
-                    This will display sidebar content
+                <Col md={3}>
+                    <SidebarContent/>
                 </Col>
             </Row>
-            {/* pid should register as the id to search for */}
-            <p>Post: {id}</p>
-
+            <Footer/>
         </Container>
     )
 }

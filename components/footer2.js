@@ -1,11 +1,12 @@
-import { Container, Navbar } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ContactForm from "./contactForm";
+import Navbar from 'react-bootstrap/Navbar'
 
-export default function Footer() {
+export function Footer() {
     const [show, setShow] = useState(false);
     const [sent, setSent] = useState(false);
 
