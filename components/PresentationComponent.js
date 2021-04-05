@@ -19,7 +19,7 @@ export default function PresentationComponent(props) {
                 <Card.Text>
                     {data.blurb}
                 </Card.Text>
-                <Link href={{ pathname: 'post', query: { id: data._id } }}>
+                <Link href={{ pathname: 'blog/' + data._id }}>
                     <Button className="stretched-link primary-btn">Open Article</Button>
                 </Link>
             </Card.Body>

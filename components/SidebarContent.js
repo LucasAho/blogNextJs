@@ -36,9 +36,9 @@ export default class SidebarContent extends Component {
                             return ( 
                                 <li key={i++}>
                                     <Link 
-                                        href={{ pathname: 'post', query: { id: article._id } }}
-                                    >
-                                        {article.title}
+                                        href="/blog"
+                                        as={`/blog/${article._id}`}>
+                                            <a>{article.title}</a>
                                     </Link>
                                 </li>
                             )
