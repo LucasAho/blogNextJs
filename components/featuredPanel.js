@@ -13,7 +13,11 @@ export class BigPanel extends Component {
                 <Card.ImgOverlay>
                     <Card.Text>
                     </Card.Text>
-                    <LinkToArticle id ={article._id}/>
+            <Link
+                href="/worldbuild/wbHome"
+                as={`/worldbuild/wbHome`}>
+                    Maalima
+            </Link>
                 </Card.ImgOverlay>
             </Card>
         )
@@ -36,7 +40,7 @@ export class SmallPanel extends Component {
                     <Card.Text>
                         {data.blurb}
                     </Card.Text>
-                    <LinkToArticle id ={article._id}/>
+                    <LinkToArticle id ={data._id}/>
                 </Card.Body>
             </Card>
         )
