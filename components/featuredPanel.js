@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import LinkToArticle from "../components/LinkToArticle";
 
 import Link from 'next/link';
 
@@ -12,11 +13,7 @@ export class BigPanel extends Component {
                 <Card.ImgOverlay>
                     <Card.Text>
                     </Card.Text>
-                    <Link
-                        href='/worldbuild/wbHome'
-                    >
-                        <Button className="stretched-link primary-btn">Checkout Maalima</Button>
-                    </Link>
+                    <LinkToArticle id ={article._id}/>
                 </Card.ImgOverlay>
             </Card>
         )
@@ -39,11 +36,7 @@ export class SmallPanel extends Component {
                     <Card.Text>
                         {data.blurb}
                     </Card.Text>
-                    <Link 
-                        href="/blog"
-                        as={`/blog/${data._id}`}>
-                            <Button className="stretched-link primary-btn">See Post</Button>
-                    </Link>
+                    <LinkToArticle id ={article._id}/>
                 </Card.Body>
             </Card>
         )

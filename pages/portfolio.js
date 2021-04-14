@@ -12,6 +12,7 @@ import API from "./api/blog-api";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
+import LinkToArticle from "../components/LinkToArticle";
 
 function PortfolioPage({ posts }) {
     return (
@@ -127,11 +128,7 @@ function PortfolioPage({ posts }) {
                                     <Card.Text>
                                         {posts[3].blurb}
                                     </Card.Text>
-                                    <Link 
-                                        href="/blog"
-                                        as={`/blog/${posts[3]._id}`}>
-                                            <Button className="stretched-link primary-btn">See Post</Button>
-                                    </Link>
+                                    <LinkToArticle id ={posts[3]._id}/>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -142,11 +139,7 @@ function PortfolioPage({ posts }) {
                                     <Card.Text>
                                         {posts[2].blurb}
                                     </Card.Text>
-                                    <Link 
-                                        href="/blog"
-                                        as={`/blog/${posts[2]._id}`}>
-                                            <Button className="stretched-link primary-btn">See Post</Button>
-                                    </Link>
+                                    <LinkToArticle id ={posts[2]._id}/>
                                 </Card.Body>
                             </Card>
                             <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
@@ -155,11 +148,7 @@ function PortfolioPage({ posts }) {
                                     <Card.Text>
                                         {posts[1].blurb}
                                     </Card.Text>
-                                    <Link 
-                                        href="/blog"
-                                        as={`/blog/${posts[1]._id}`}>
-                                            <Button className="stretched-link primary-btn">See Post</Button>
-                                    </Link>
+                                    <LinkToArticle id ={posts[1]._id}/>
                                 </Card.Body>
                             </Card>
                         </Col>

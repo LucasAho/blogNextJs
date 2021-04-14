@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import API from "../pages/api/blog-api";
 import Spinner from 'react-bootstrap/Spinner';
 import Link from 'next/link';
+import LinkToArticle from "../components/LinkToArticle";
 
 export default class SidebarContent extends Component {
     constructor(props) {
@@ -35,11 +36,7 @@ export default class SidebarContent extends Component {
                         {data.map((article, i) => {
                             return ( 
                                 <li key={i++}>
-                                    <Link 
-                                        href="/blog"
-                                        as={`/blog/${article._id}`}>
-                                            <a>{article.title}</a>
-                                    </Link>
+                                    <LinkToArticle id ={article._id}/>
                                 </li>
                             )
                         })}
