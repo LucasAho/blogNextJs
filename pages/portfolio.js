@@ -111,7 +111,7 @@ function PortfolioPage({ posts }) {
                 </Container>
             </Element>
             <Element id='blog' name='blog'>
-                <Container className="py-3" style={{ backgroundColor: "#180D35" }}>
+                <Container className="pt-3" style={{ backgroundColor: "#180D35" }}>
                     <SectionHeader
                         titleText="The Creative Spectrum"
                         subText="My blog for sharing my creative works and the philosophies behind them"
