@@ -10,7 +10,7 @@ import ContactForm from '../components/contactForm';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import { Button } from 'react-bootstrap';
-import API from './api/blog';
+import API from './api/blog-api';
 
 function Home({ recentGenres }) {
     const [show, setShow] = useState(false);
