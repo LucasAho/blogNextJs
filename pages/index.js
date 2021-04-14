@@ -10,8 +10,9 @@ import ContactForm from '../components/contactForm';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import { Button } from 'react-bootstrap';
+import API from './api/blog';
 
-export default function Home() {
+function Home({ recentGenres }) {
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
@@ -24,22 +25,63 @@ export default function Home() {
       </Head>
 
       <Container>
-          <BlogNav handleShow = {handleShow}/>
-          Please note site is very much under construction
+          <BlogNav handleShow = {handleShow} title="The Creative Spectrum"/>
           <Row>
-            <Col className="sm-6">
+            <Col md={9} className='mx-auto'>
+              <h6>World of Maalima</h6>
               <BigPanel/>
-              {/*  Big card */}
             </Col>
-            <Col className="sm-3">
-              <SmallPanel/>
-              {/*  Two small cards */}
+          </Row>
+          <Row>
+            <Col md={9}>
+              <h6>Poetry</h6>
+              <SmallPanel data = {recentGenres.poem}/>
             </Col>
-            <Col className="sm-3">
-              {/*  Two small cards */}
+          </Row> 
+          <Row>
+            <Col md={9}>
+              <h6>Mental Health</h6>
+              <SmallPanel data = {recentGenres.mental}/>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={9}>
+              <h6>Politics</h6>
+              <SmallPanel data = {recentGenres.politics}/>
             </Col>
           </Row>
       </Container>
     </div>
   )
 }
+
+export async function getStaticProps() {
+  const res = await API.getAllPosts();
+  const posts = await res.data;
+
+
+  let recentGenres = {
+    poem: '',
+    politics: '',
+    mental: ''
+  }
+
+  posts.map((post, i) => {
+    if (post.genre === 'Poetry' && recentGenres.poem === '') {
+      recentGenres.poem = { post }
+    } else if (post.genre === "Politics" && recentGenres.politics === '') {
+      recentGenres.politics = { post }
+    } else if (post.genre === "Mental Health" && recentGenres.mental === '') {
+      recentGenres.mental = { post }
+    } 
+    return recentGenres;
+  });
+  
+  return {
+    props: {
+      recentGenres
+    }
+  }
+}
+
+export default Home;

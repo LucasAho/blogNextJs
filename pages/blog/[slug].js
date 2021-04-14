@@ -18,8 +18,7 @@ const Post = () => {
                     {slug !== undefined ?
                         (<Article articleId = {slug} />)
                     :
-                    null
-                    }
+                    null}
                 </Col>
                 <Col md={3}>
                     <SidebarContent/>

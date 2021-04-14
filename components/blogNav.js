@@ -21,16 +21,16 @@ export default function BlogNav(props) {
         <Row className='my-2'>
             <Jumbotron className="text-center contrast-bg ">
                 <Container className='my-2 py-2'>
-                    <h1>The Creative Spectrum</h1>
+                    <h1>{props.title}</h1>
                     <Navbar className="contrast-bg" expand="md">
                         <Navbar.Brand href="/">Home</Navbar.Brand>
                         <Nav.Link className="nav-portfolio-link" href="/portfolio">Portfolio</Nav.Link>
+                        <Nav.Link className="nav-portfolio-link" href="/worldbuild/wbHome">Maalima</Nav.Link>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse>
                             <Nav className="mr-auto nav-justified" variant='pills'>
                                 <NavDropdown title="Topics">
                                     <NavDropdown.Item href="#">Mental Health</NavDropdown.Item>
-                                    <NavDropdown.Item href="#">Conlangs</NavDropdown.Item>
                                     <NavDropdown.Item href="#">Politics</NavDropdown.Item>
                                     <NavDropdown.Item href="#">Poetry</NavDropdown.Item>
                                 </NavDropdown>

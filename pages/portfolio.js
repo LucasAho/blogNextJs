@@ -1,17 +1,26 @@
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Head from 'next/head';
 import Carousel from 'react-bootstrap/Carousel';
 import SectionHeader from "../components/portfolioSectionHeader";
 import CardCarousel from "../components/cardCarousel";
-import CardPanel from "../components/blogCardCompiler";
 import { Footer } from "../components/footer2"
 import MenuButton from "../components/menuButton";
 import { Element } from 'react-scroll';
+import API from "./api/blog";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
 
-export default function PortfolioPage() {
+function PortfolioPage({ posts }) {
     return (
         <Container className="justify-content-center">
+        <Head>
+            <title>Lucas Portfolio</title>
+            <link rel="icon" href="/favicon.ico" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
             <MenuButton />
             <Element id='bio' name='bio'>
                 <Container className="purple-bg py-3">
@@ -105,11 +114,56 @@ export default function PortfolioPage() {
                 <Container className="py-3" style={{ backgroundColor: "#180D35" }}>
                     <SectionHeader
                         titleText="The Creative Spectrum"
-                        subText="My blog for sharing my creative works and my philosophies behind them"
+                        subText="My blog for sharing my creative works and the philosophies behind them"
                         variant="p"
                         color="light"
                     />
-                    <CardPanel />
+                    <Row className='px-3'>
+                        <Col className='d-flex flex-column' md={6}>
+                            <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                                    <Card.Img variant='top' src={posts[3].image} />
+                                <Card.Body>
+                                    <Card.Title>{posts[3].title}</Card.Title>
+                                    <Card.Text>
+                                        {posts[3].blurb}
+                                    </Card.Text>
+                                    <Link 
+                                        href="/blog"
+                                        as={`/blog/${posts[3]._id}`}>
+                                            <Button className="stretched-link primary-btn">See Post</Button>
+                                    </Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col className='d-flex flex-column' md={6}>
+                            <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                                <Card.Body>
+                                    <Card.Title>{posts[2].title}</Card.Title>
+                                    <Card.Text>
+                                        {posts[2].blurb}
+                                    </Card.Text>
+                                    <Link 
+                                        href="/blog"
+                                        as={`/blog/${posts[2]._id}`}>
+                                            <Button className="stretched-link primary-btn">See Post</Button>
+                                    </Link>
+                                </Card.Body>
+                            </Card>
+                            <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                                <Card.Body>
+                                    <Card.Title>{posts[1].title}</Card.Title>
+                                    <Card.Text>
+                                        {posts[1].blurb}
+                                    </Card.Text>
+                                    <Link 
+                                        href="/blog"
+                                        as={`/blog/${posts[1]._id}`}>
+                                            <Button className="stretched-link primary-btn">See Post</Button>
+                                    </Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
                 </Container>
             </Element>
             <Element name='contact' id='contact'>
@@ -118,3 +172,15 @@ export default function PortfolioPage() {
         </Container>
     )
 }
+export async function getStaticProps() {
+    const res = await API.getAllPosts();
+    const posts = await res.data;
+    
+    return {
+        props: {
+            posts
+        }
+    }
+};
+
+export default PortfolioPage

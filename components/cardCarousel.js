@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import React, { useEffect } from "react";
+import React from "react";
 import Carousel from "react-multi-carousel";
 import { CardSet } from "../pages/api/portfolioCardSet";
 import "react-multi-carousel/lib/styles.css";

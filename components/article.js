@@ -31,30 +31,31 @@ export default class Article extends Component {
         return (
             (
                 isLoaded ?
-                    <Container>
-                        <Row>
-                            <Col md='8'>
-                                <h2>{data.title}</h2>
-                                <p>
-                                    Date: {data.dateWritten} |
-                                    Topic: {data.genre}
-                                </p>
-                                <h6 className='mx-4'>{data.blurb}</h6>
-                            </Col>
-                            <Col className='my-auto' md='4'>
-                                <img className="mt-1 article-img" src={data.image} />
-                            </Col>
-                        </Row>
-                        <Row className='mr-1 mt-3'>
-                            {data.paragraphs.map((p,i) => {
-                                return (
-                                    <div key={i++}>
-                                        {p} 
-                                    </div>
-                                )
-                            })}
-                        </Row>
-                    </Container>
+                            <Container>
+                                <Row>
+                                    <Col md='8'>
+                                        <h2>{data.title}</h2>
+                                        <p>
+                                            Date: {data.dateWritten} |
+                                            Topic: {data.genre}
+                                        </p>
+                                        <h6 className='mx-4'>{data.blurb}</h6>
+                                    </Col>
+                                    <Col className='my-auto' md='4'>
+                                        <img className="mt-1 article-img" src={data.image} />
+                                    </Col>
+                                </Row>
+                                <Row className='mr-1 mt-3'>
+                                    {data.paragraphs.map((p,i) => {
+                                        return (
+                                            <div key={i++}>
+                                                {p} 
+                                            </div>
+                                        )
+                                    })}
+                                </Row>
+                            </Container> 
+                            
                     :
                     <Spinner animation="border" role="status"><span className="sr-only">Loading...</span></Spinner>
             )
