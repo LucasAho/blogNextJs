@@ -8,16 +8,23 @@ export default class LinkToArticle extends Component{
     }
     render() {
         const props = this.props
+        if (props.title != 0) {
         return (
             <Link
-                href="/article/[slug]"
+                href="/article/"
                 as={`/article/${props.id}`}>
-                    {props.variant === 'no-btn' ?
-                        null 
-                        :
-                    <Button className="stretched-link primary-btn">See Post</Button>
-        }
+                    <a>{props.title}</a>
             </Link>
         )
+        } else {
+            return (
+                <Link
+                    href="/article/"
+                    as={`/article/${props.id}`}>
+                        <Button className="stretched-link primary-btn">See Post</Button>
+                </Link>
+                
+            )
+        }
     }
 }

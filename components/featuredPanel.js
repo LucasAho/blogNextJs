@@ -40,7 +40,7 @@ export class SmallPanel extends Component {
                     <Card.Text>
                         {data.blurb}
                     </Card.Text>
-                    <LinkToArticle id ={data._id}/>
+                    <LinkToArticle id ={data._id} title={0}/>
                 </Card.Body>
             </Card>
         )
