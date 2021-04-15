@@ -5,9 +5,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { BigPanel, SmallPanel } from '../components/featuredPanel'
 import BlogNav from '../components/blogNav';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ContactForm from '../components/contactForm';
-import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import API from './api/blog-api';
 
@@ -57,7 +54,6 @@ function Home({ recentGenres }) {
 export async function getStaticProps() {
   const res = await API.getAllPosts();
   const posts = await res.data;
-
 
   let recentGenres = {
     poem: '',

@@ -27,6 +27,7 @@ export default class SidebarContent extends Component {
     }
     render() {
         const { isLoaded, data } = this.state;
+        const exclude = this.props.exclude;
         return (
             (
                 isLoaded ?
@@ -35,6 +36,7 @@ export default class SidebarContent extends Component {
                         <ul>
                         {data.map((article, i) => {
                             return ( 
+                                (exclude !== article._id ?  
                                 <li key={i++}>
                                     <Link
                                         href="/article/[slug]"
@@ -42,6 +44,9 @@ export default class SidebarContent extends Component {
                                             <a>{article.title}</a>
                                     </Link>
                                 </li>
+                                :
+                                null
+                                )
                             )
                         })}
                         </ul>
