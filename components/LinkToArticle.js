@@ -12,7 +12,11 @@ export default class LinkToArticle extends Component{
             <Link
                 href="/article/[slug]"
                 as={`/article/${props.id}`}>
+                    {props.variant === 'no-btn' ?
+                        null 
+                        :
                     <Button className="stretched-link primary-btn">See Post</Button>
+        }
             </Link>
         )
     }

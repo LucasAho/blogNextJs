@@ -36,7 +36,7 @@ export default class SidebarContent extends Component {
                         {data.map((article, i) => {
                             return ( 
                                 <li key={i++}>
-                                    <LinkToArticle id ={article._id}/>
+                                    <LinkToArticle id ={article._id} variant='no-btn'/>
                                 </li>
                             )
                         })}
