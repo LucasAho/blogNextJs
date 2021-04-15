@@ -3,11 +3,11 @@ import BlogNav from '../../components/blogNav'
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Article from '../../components/article';
+import ArticleLoader from '../../components/article';
 import SidebarContent from '../../components/SidebarContent';
 import { Footer } from '../../components/footer2';
 
-const Post = () => {
+const Article = () => {
     const router = useRouter();
     const { slug } = router.query;
     return (
@@ -16,7 +16,7 @@ const Post = () => {
             <Row>
                 <Col md={9}>
                     {slug !== undefined ?
-                        (<Article articleId = {slug} />)
+                        (<ArticleLoader articleId = {slug} />)
                     :
                     null}
                 </Col>
@@ -29,4 +29,4 @@ const Post = () => {
     )
 }
 
-export default Post
+export default Article;

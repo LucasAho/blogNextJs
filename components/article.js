@@ -7,10 +7,10 @@ import Spinner from 'react-bootstrap/Spinner';
 
 
 
-export default class Article extends Component {
+export default class ArticleLoader extends Component {
     constructor(props) {
         super(props);
-
+        console.log(props)
         this.state = {
             isLoaded: false,
             data: null
@@ -50,6 +50,7 @@ export default class Article extends Component {
                                         return (
                                             <div key={i++}>
                                                 {p} 
+                                                <b/>
                                             </div>
                                         )
                                     })}

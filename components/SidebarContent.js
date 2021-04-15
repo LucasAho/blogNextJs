@@ -36,11 +36,11 @@ export default class SidebarContent extends Component {
                         {data.map((article, i) => {
                             return ( 
                                 <li key={i++}>
-            <Link
-                href="/article/[slug]"
-                as={`/article/${props.id}`}>
-                    <a>{props.title}</a>
-            </Link>
+                                    <Link
+                                        href="/article/[slug]"
+                                        as={`/article/${article._id}`}>
+                                            <a>{article.title}</a>
+                                    </Link>
                                 </li>
                             )
                         })}
