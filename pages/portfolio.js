@@ -128,7 +128,7 @@ function PortfolioPage({ posts }) {
                                     <Card.Text>
                                         {posts[3].blurb}
                                     </Card.Text>
-                                    <LinkToArticle id ={posts[3]._id}/>
+                                    <LinkToArticle id ={posts[3]._id} title={0}/>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -139,7 +139,7 @@ function PortfolioPage({ posts }) {
                                     <Card.Text>
                                         {posts[2].blurb}
                                     </Card.Text>
-                                    <LinkToArticle id ={posts[2]._id}/>
+                                    <LinkToArticle id ={posts[2]._id} title={0}/>
                                 </Card.Body>
                             </Card>
                             <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
@@ -148,7 +148,7 @@ function PortfolioPage({ posts }) {
                                     <Card.Text>
                                         {posts[1].blurb}
                                     </Card.Text>
-                                    <LinkToArticle id ={posts[1]._id}/>
+                                    <LinkToArticle id ={posts[1]._id} title={0}/>
                                 </Card.Body>
                             </Card>
                         </Col>
