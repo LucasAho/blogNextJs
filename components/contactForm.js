@@ -1,10 +1,8 @@
-import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 export default function ContactForm() {
     return (
-        <Container>
             <Form name="contact" method="POST" action="/success" data-netlify="true">
                 <input type="hidden" name="contact-form" value="contact"/>
                 <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
@@ -23,6 +21,5 @@ export default function ContactForm() {
                     Send
                 </Button>
             </Form>
-        </Container>
     )
 }
