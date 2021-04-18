@@ -1,8 +1,6 @@
 import { Component } from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import LinkToArticle from "../components/LinkToArticle";
-
 import Link from 'next/link';
 
 export class BigPanel extends Component {
