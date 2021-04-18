@@ -9,8 +9,7 @@ export default function Profile() {
     return (
         user && (
             <div>
-                {console.log(user)}
-                user.name;
+                {user.name};
             </div>
         )
     )

@@ -9,6 +9,12 @@ const API = {
     },
     getPostById: function(id) {
         return axios.get(queryURL + "/blog/find/" + id);
+    },
+    getTopics: function(){
+        return axios.get(queryURL + "/blog/findGenres");
+    },
+    createArticle: function(obj) {
+        return axios.post(queryURL + "/blog/create", obj);
     }
     
 }

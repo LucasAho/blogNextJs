@@ -19,7 +19,7 @@ function WbHome() {
             </Head>
 
             <Container>
-                <BlogNav handleShow = {handleShow} title="Maalima"/>
+                <BlogNav handleShow = {handleShow} title="Hestafan Universe"/>
                 <Row>
                     <h4>Mapping</h4>
                     <h6>World Map</h6>
