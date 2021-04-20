@@ -39,6 +39,7 @@ export default function Tukren() {
                         <ConLangLayout>
                             <h6>Root Words</h6>
                             <p>Tukren root words, built off of the Swadesh list. <br/> Visit <a target="_blank" href="https://en.wikipedia.org/wiki/Swadesh_list">Swadesh List</a></p>
+                            
                         </ConLangLayout>
                     </Element>
                     <Element id='phrase' name='phrase'>

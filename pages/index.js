@@ -3,15 +3,17 @@ import styles from '../styles/Home.module.css';
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { BigPanel, SmallPanel } from '../components/featuredPanel'
 import BlogNav from '../components/blogNav';
+import Card from 'react-bootstrap/Card';
 import { useState } from "react";
+import LinkToArticle from "../components/LinkToArticle";
 import API from './api/blog-api';
+import Link from "next/link"
+import BlogHomeLayout from '../components/BlogHomeLayout';
 
-function Home({ recentGenres }) {
+function Home({ posts }) {
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
   return (
     <div className={styles.container}>
       <Head>
@@ -22,28 +24,64 @@ function Home({ recentGenres }) {
 
       <Container>
           <BlogNav handleShow = {handleShow} title="The Creative Spectrum"/>
+        
+
+          <h4>Recent Posts</h4>
+          <h6>
+            When I no longer need to sink my freetime into building this website, I intend to update it regularly with my thoughts on a range of topics. I also include a link to my worldbuilding page and some of the poems and short stories I've written.
+            Thanks for checking it out and bearing with the website while it undergoes construction.
+            Feel free to <Link href="/contact">contact me</Link>
+          </h6>
           <Row>
-            <Col md={9} className='mx-auto'>
-              <h6>World of Maalima</h6>
-              <BigPanel/>
+            <Col>
+              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '75%' }}>
+                  <Card.Body>
+                      <Card.Header><h5>{posts[0].title}</h5></Card.Header>
+                      <Card.Img src={posts[0].image}></Card.Img>
+                      <Card.Text>
+                          {posts[0].blurb}
+                      </Card.Text>
+                      <LinkToArticle id ={posts[0]._id} title={0}/>
+                  </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '75%' }}>
+                  <Card.Body>
+                      <Card.Header><h5>{posts[1].title}</h5></Card.Header>
+                      <Card.Img src={posts[1].image}></Card.Img>
+                      <Card.Text>
+                          {posts[1].blurb}
+                      </Card.Text>
+                      <LinkToArticle id ={posts[1]._id} title={0}/>
+                  </Card.Body>
+              </Card>
             </Col>
           </Row>
           <Row>
-            <Col md={9}>
-              <h6>Poetry</h6>
-              <SmallPanel data = {recentGenres.poem}/>
+            <Col>
+              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '75%' }}>
+                  <Card.Body>
+                      <Card.Header><h5>{posts[2].title}</h5></Card.Header>
+                      <Card.Img src={posts[2].image}></Card.Img>
+                      <Card.Text>
+                          {posts[2].blurb}
+                      </Card.Text>
+                      <LinkToArticle id ={posts[2]._id} title={0}/>
+                  </Card.Body>
+              </Card>
             </Col>
-          </Row> 
-          <Row>
-            <Col md={9}>
-              <h6>Mental Health</h6>
-              <SmallPanel data = {recentGenres.mental}/>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={9}>
-              <h6>Politics</h6>
-              <SmallPanel data = {recentGenres.politics}/>
+            <Col>
+              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '75%' }}>
+                  <Card.Body>
+                      <Card.Header><h5>{posts[3].title}</h5></Card.Header>
+                      <Card.Img src={posts[3].image}></Card.Img>
+                      <Card.Text>
+                          {posts[3].blurb}
+                      </Card.Text>
+                      <LinkToArticle id ={posts[3]._id} title={0}/>
+                  </Card.Body>
+              </Card>
             </Col>
           </Row>
       </Container>
@@ -54,13 +92,12 @@ function Home({ recentGenres }) {
 export async function getStaticProps() {
   const res = await API.getAllPosts();
   const posts = await res.data;
-
+/*
   let recentGenres = {
     poem: '',
     politics: '',
     mental: ''
   }
-
   posts.map((post, i) => {
     if (post.genre === 'Poetry' && recentGenres.poem === '') {
       recentGenres.poem = { post }
@@ -71,10 +108,10 @@ export async function getStaticProps() {
     } 
     return recentGenres;
   });
-  
+  */
   return {
     props: {
-      recentGenres
+      posts: posts
     }
   }
 }

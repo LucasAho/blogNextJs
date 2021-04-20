@@ -13,6 +13,9 @@ const API = {
     getTopics: function(){
         return axios.get(queryURL + "/blog/findGenres");
     },
+    getMetaData: function(id){
+        return axios.get(queryURL + "/blog/findData/except/" + id);
+    },
     createArticle: function(obj) {
         return axios.post(queryURL + "/blog/create", obj);
     }
