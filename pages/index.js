@@ -28,7 +28,7 @@ function Home({ posts }) {
 
           <h4>Recent Posts</h4>
           <h6>
-            When I no longer need to sink my freetime into building this website, I intend to update it regularly with my thoughts on a range of topics. I also include a link to my worldbuilding page and some of the poems and short stories I've written.
+            Once this website starts to near completion, I intend to post regularly on a range of topics. I also include a link to my work in progress worldbuilding page and some of the poems and short stories I've written.
             Thanks for checking it out and bearing with the website while it undergoes construction.
             Feel free to <Link href="/contact">contact me</Link>
           </h6>
