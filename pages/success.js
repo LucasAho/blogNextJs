@@ -4,7 +4,11 @@ export default function Success() {
         <div>
             Form Submitted
             <br />
-            <Link href="/">Return Home</Link>
+            <Link
+                href="/"
+                as={`/`}>
+                    <a>Home</a>
+            </Link>
         </div>
     )
 }

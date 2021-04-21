@@ -1,11 +1,17 @@
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Router from "next/router";
 
 export default function Contact() {
     return (
         <Container>
-            <Form name="contact" method="POST" action="/success" data-netlify="true">
+            <Form name="contact" method="POST" onSubmit={e=> {
+                    e.preventDefault();
+                    Router.push("/success");
+
+                }} 
+                data-netlify="true">
                 <input type="hidden" name="contact-form" value="contact" />
                 <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
                     <Form.Label htmlFor="yourname">Name</Form.Label>
