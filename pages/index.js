@@ -30,9 +30,7 @@ function Home({ posts }) {
           <h6>
             Once this website starts to near completion, I intend to post regularly on a range of topics. I also include a link to my work in progress worldbuilding page and some of the poems and short stories I've written.
             Thanks for checking it out and bearing with the website while it undergoes construction.
-            {/*
             Feel free to <Link href="/contact">contact me</Link>
-            */}
           </h6>
           <Row>
             <Col>

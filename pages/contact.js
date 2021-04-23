@@ -6,27 +6,10 @@ import Router from "next/router";
 export default function Contact() {
     return (
         <Container>
-            <form name="contact" 
+            <Form name="contact" 
                 method="POST"
                 data-netlify="true">
                 <input type="hidden" name="form-name" value="contact" />
-                <p>
-                    <label htmlFor='name'></label>
-                    <input type='text' id='name' name='name'/>
-                </p>
-                <p>
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id="email" name="email" />
-                </p>
-                <p>
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" name="message"></textarea>
-                </p>
-                <p>
-                    <button type="submit">Send</button>
-                </p>
-            </form>
-                {/*}
                 <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
                     <Form.Label htmlFor="yourname">Name</Form.Label>
                     <Form.Control name='name' id='yourname' placeholder="Benek Thrufyr" />
@@ -43,7 +26,24 @@ export default function Contact() {
                 <Button type='submit' className="blue-bg">
                     Send
                 </Button>
+            </Form>
+                {/*}
             </form>
+                <p>
+                    <label htmlFor='name'>Name</label>
+                    <input type='text' id='name' name='name'/>
+                </p>
+                <p>
+                    <label htmlFor="email">Email</label>
+                    <input type="text" id="email" name="email" />
+                </p>
+                <p>
+                    <label htmlFor="message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
     */}
         </Container>
     )
