@@ -2,7 +2,6 @@ import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import BlogNav from '../../components/blogNav';
 import { useState } from "react";
 
@@ -19,7 +18,7 @@ function WbHome() {
             </Head>
 
             <Container>
-                <BlogNav handleShow = {handleShow} title="Maalima"/>
+                <BlogNav handleShow = {handleShow} title="Hestafan Universe"/>
                 <Row>
                     <h4>Mapping</h4>
                     <h6>World Map</h6>

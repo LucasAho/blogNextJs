@@ -10,8 +10,6 @@ import MenuButton from "../components/menuButton";
 import { Element } from 'react-scroll';
 import API from "./api/blog-api";
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Link from 'next/link';
 import LinkToArticle from "../components/LinkToArticle";
 
 function PortfolioPage({ posts }) {

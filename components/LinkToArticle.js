@@ -1,6 +1,6 @@
 import { Component } from "react";
 import Link from 'next/link';
-import { Button } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 export default class LinkToArticle extends Component{
     constructor(props) {

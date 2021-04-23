@@ -7,15 +7,8 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Modal from 'react-bootstrap/Modal';
-import { useState } from "react";
-import ContactForm from './contactForm';
 
 export default function BlogNav(props) {
-    const [show, setShow] = useState(false);
-    const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
 
     return (
         <Row className='my-2'>
@@ -41,14 +34,6 @@ export default function BlogNav(props) {
                             </Form>
                         </Navbar.Collapse>
                     </Navbar>
-                    <Modal show={show} onHide={handleClose}>
-                        <ContactForm />
-                        <Modal.Footer>
-                            <Button className="contrast-bg dark-text" onClick={handleClose}>
-                                Close
-                            </Button>
-                        </Modal.Footer>
-                    </Modal>
                 </Container>
             </Jumbotron>
         </Row>

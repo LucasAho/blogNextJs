@@ -4,6 +4,7 @@ import { config, library } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { UserProvider } from '@auth0/nextjs-auth0';
 
 config.autoAddCss = false; 
 library.add(
@@ -12,7 +13,11 @@ library.add(
 
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <UserProvider>
+      <Component {...pageProps} />
+    </UserProvider>
+  );
 }
 
 export default MyApp
