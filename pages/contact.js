@@ -9,17 +9,17 @@ export default function Contact() {
             <form name="contact" 
                 method="POST"
                 data-netlify="true">
-                <input type="hidden" name="bot-field" value="contact" />
+                <input type="hidden" name="form-name" value="contact" />
                 <p>
-                    <label for='name'></label>
+                    <label htmlFor='name'></label>
                     <input type='text' id='name' name='name'/>
                 </p>
                 <p>
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input type="text" id="email" name="email" />
                 </p>
                 <p>
-                    <label for="message">Message</label>
+                    <label htmlFor="message">Message</label>
                     <textarea id="message" name="message"></textarea>
                 </p>
                 <p>
