@@ -8,7 +8,11 @@ export default function Contact() {
         <Container>
             <Form name="contact" 
                 method="POST"
-                data-netlify="true">
+                data-netlify="true"
+                onSubmit={(e)=>{
+                    e.preventDefault();
+                    Router.push('/success');
+                }}>
                 <input type="hidden" name="form-name" value="contact" />
                 <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
                     <Form.Label htmlFor="yourname">Name</Form.Label>
