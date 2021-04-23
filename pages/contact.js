@@ -6,13 +6,27 @@ import Router from "next/router";
 export default function Contact() {
     return (
         <Container>
-            <Form name="contact" method="POST" onSubmit={e=> {
-                    e.preventDefault();
-                    Router.push("/success");
-
-                }} 
+            <form name="contact" 
+                method="POST"
                 data-netlify="true">
-                <input type="hidden" name="contact-form" value="contact" />
+                <input type="hidden" name="bot-field" value="contact" />
+                <p>
+                    <label for='name'></label>
+                    <input type='text' id='name' name='name'/>
+                </p>
+                <p>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" />
+                </p>
+                <p>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </form>
+                {/*}
                 <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
                     <Form.Label htmlFor="yourname">Name</Form.Label>
                     <Form.Control name='name' id='yourname' placeholder="Benek Thrufyr" />
@@ -25,10 +39,12 @@ export default function Contact() {
                     <Form.Label htmlFor='message-content'>Message</Form.Label>
                     <Form.Control as="textarea" name='message' rows={3} id='message-content' />
                 </Form.Group>
+            
                 <Button type='submit' className="blue-bg">
                     Send
                 </Button>
-            </Form>
+            </form>
+    */}
         </Container>
     )
 }
