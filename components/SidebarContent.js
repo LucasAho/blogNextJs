@@ -10,13 +10,14 @@ function SidebarContent({ posts }) {
             {posts.map((post, i) => {
                 return ( 
                     <Card key={i++}>
-                        <Link
-                            href="/article/[slug]"
-                            as={`/article/${post._id}`}>
-                            <Button>{post.title}</Button>
-                        </Link>
+                        <Card.Body>
+                            <Link
+                                href="/article/[slug]"
+                                as={`/article/${post._id}`}>
+                                <h6>{post.title}</h6>
+                            </Link>
+                        </Card.Body>
                     </Card>
-
                 )
             })}
         </Container>
