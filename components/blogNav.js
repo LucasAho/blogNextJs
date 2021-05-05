@@ -18,7 +18,7 @@ export default function BlogNav(props) {
                     <Navbar className="contrast-bg" expand="md">
                         <Navbar.Brand href="/">Home</Navbar.Brand>
                         <Nav.Link className="nav-portfolio-link" href="/portfolio">Portfolio</Nav.Link>
-                        <Nav.Link className="nav-portfolio-link" href="/worldbuild/wbHome">Maalima</Nav.Link>
+                        <Nav.Link className="nav-portfolio-link" href="/worldbuild/home">Maalima</Nav.Link>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse>
                             <Nav className="mr-auto nav-justified" variant='pills'>

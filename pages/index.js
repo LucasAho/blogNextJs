@@ -84,6 +84,23 @@ function Home({ posts }) {
               </Card>
             </Col>
           </Row>
+          <Row>
+            <Col>
+              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '75%' }}>
+                  <Card.Body>
+                      <Card.Header><h5>{posts[4].title}</h5></Card.Header>
+                      <Card.Img src={posts[4].image}></Card.Img>
+                      <Card.Text>
+                          {posts[4].blurb}
+                      </Card.Text>
+                      <LinkToArticle id ={posts[4]._id} title={0}/>
+                  </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+            </Col>
+
+          </Row>
       </Container>
     </div>
   )
@@ -92,6 +109,7 @@ function Home({ posts }) {
 export async function getStaticProps() {
   const res = await API.getAllPosts();
   const posts = await res.data;
+  console.log(posts);
 /*
   let recentGenres = {
     poem: '',

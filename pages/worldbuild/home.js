@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import BlogNav from '../../components/blogNav';
 import { useState } from "react";
+import Link from "next/link";
 
 function WbHome() {
     const [show, setShow] = useState(false);
@@ -27,7 +28,7 @@ function WbHome() {
                 </Row>
                 <Row>
                     <h4>Constructed Languages</h4>
-                    <h6>Tukren</h6>
+                    <h6><Link href="/worldbuild/conlang/tukren">Tukren</Link></h6>
                     <h6>Hanatu</h6>
                     <h6>Golani</h6>
                 </Row>
