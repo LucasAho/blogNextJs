@@ -109,7 +109,6 @@ function Home({ posts }) {
 export async function getStaticProps() {
   const res = await API.getAllPosts();
   const posts = await res.data;
-
 /*
   let recentGenres = {
     poem: '',
