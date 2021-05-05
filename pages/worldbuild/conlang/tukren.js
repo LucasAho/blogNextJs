@@ -1,4 +1,4 @@
-
+import Link from 'next/link';
 import Head from 'next/head';
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
@@ -30,16 +30,9 @@ export default function Tukren() {
                     <h2>Voice of Stone</h2>
                     <Element id='phon' name='phon'>
                         <ConLangLayout>
-                            <h6>Phonology</h6>
+                            <h6>Phonology and Orthography</h6>
                             <p>Note that sounds follow IPA pronounciation. <br/> Visit <a target="_blank" href="https://www.ipachart.com/">IPA Chart</a> to learn more. </p>
                             <PhonologyTable/>
-                        </ConLangLayout>
-                    </Element>
-                    <Element id='root' name='root'>
-                        <ConLangLayout>
-                            <h6>Root Words</h6>
-                            <p>Tukren root words, built off of the Swadesh list. <br/> Visit <a target="_blank" href="https://en.wikipedia.org/wiki/Swadesh_list">Swadesh List</a></p>
-                            
                         </ConLangLayout>
                     </Element>
                     <Element id='phrase' name='phrase'>
@@ -69,7 +62,7 @@ export default function Tukren() {
                     </Element>
                     <Element id='words' name='words'>
                         <ConLangLayout>
-                            <h6>Dictionary</h6>
+                            <h6><Link href="/worldbuild/conlang/tuk/lexicon">Dictionary</Link></h6>
                         </ConLangLayout>
                     </Element>
                 </Col>
