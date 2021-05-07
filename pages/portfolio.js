@@ -38,8 +38,8 @@ function PortfolioPage({ posts }) {
                                 I spend every moment in pursuit of my goals and cherish learning above all.
                             </div>
                             <div className="my-3">
-                                When Colorado isn't dumping snow, I relax by rock climbing and biking. When I'm content indoors, I put my free time into
-                                learning new subjects, writing prose and poetry, and putting together DnD campaigns for my friends.
+                                When I'm not putting working or writing, I enjoy rock climbing and running. Otherwise, you can find me learning new subjects, 
+                                writing prose and poetry, and putting together DnD campaigns for my friends.
                             </div>
                             <div className="my-3">
                                 This website navigates from my programming experience to my creative endeavors;

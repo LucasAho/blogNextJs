@@ -54,7 +54,7 @@ export default function PhonologyTable() {
                 <tr>
                     <th scope="row">Liquid</th>
                     <td></td>
-                    <td>ɹ</td>
+                    <td>l,ɹ</td>
                     <td>j</td>
                     <td>w</td>
                     <td></td>

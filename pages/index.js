@@ -9,6 +9,7 @@ import { useState } from "react";
 import LinkToArticle from "../components/LinkToArticle";
 import API from './api/blog-api';
 import Link from "next/link"
+import Button from "react-bootstrap/Button";
 import BlogHomeLayout from '../components/BlogHomeLayout';
 
 function Home({ posts }) {
@@ -24,17 +25,15 @@ function Home({ posts }) {
 
       <Container>
           <BlogNav handleShow = {handleShow} title="The Creative Spectrum"/>
-        
-
-          <h4>Recent Posts</h4>
           <h6>
             Once this website starts to near completion, I intend to post regularly on a range of topics. I also include a link to my work in progress worldbuilding page and some of the poems and short stories I've written.
             Thanks for checking it out and bearing with the website while it undergoes construction.
             Feel free to <Link href="/contact">contact me</Link>
           </h6>
           <Row>
+          <h4>Most Recent Article</h4>
             <Col>
-              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '75%' }}>
+              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
                   <Card.Body>
                       <Card.Header><h5>{posts[0].title}</h5></Card.Header>
                       <Card.Img src={posts[0].image}></Card.Img>
@@ -46,14 +45,16 @@ function Home({ posts }) {
               </Card>
             </Col>
             <Col>
-              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '75%' }}>
+              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
                   <Card.Body>
-                      <Card.Header><h5>{posts[1].title}</h5></Card.Header>
-                      <Card.Img src={posts[1].image}></Card.Img>
+                      <Card.Header><h5>Tukren Phonology</h5></Card.Header>
+                      <Card.Img src="https://i.imgur.com/qwsxzsC.jpg"></Card.Img>
                       <Card.Text>
-                          {posts[1].blurb}
+                          I am still deciding how to structure the conlang pages, so don't expect much here. 
                       </Card.Text>
-                      <LinkToArticle id ={posts[1]._id} title={0}/>
+                      <Link href="/worldbuild/conlang/tukren">
+                        <Button className="stretched-link primary-btn">See Post</Button>
+                      </Link>
                   </Card.Body>
               </Card>
             </Col>
