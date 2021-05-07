@@ -120,26 +120,17 @@ function PortfolioPage({ posts }) {
                     <Row className='px-3'>
                         <Col className='d-flex flex-column' md={6}>
                             <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
-                                    <Card.Img variant='top' src={posts[3].image} />
+                                    <Card.Img variant='top' src={posts[0].image} />
                                 <Card.Body>
-                                    <Card.Title>{posts[3].title}</Card.Title>
+                                    <Card.Title>{posts[0].title}</Card.Title>
                                     <Card.Text>
-                                        {posts[3].blurb}
+                                        {posts[0].blurb}
                                     </Card.Text>
-                                    <LinkToArticle id ={posts[3]._id} title={0}/>
+                                    <LinkToArticle id ={posts[0]._id} title={0}/>
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col className='d-flex flex-column' md={6}>
-                            <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
-                                <Card.Body>
-                                    <Card.Title>{posts[2].title}</Card.Title>
-                                    <Card.Text>
-                                        {posts[2].blurb}
-                                    </Card.Text>
-                                    <LinkToArticle id ={posts[2]._id} title={0}/>
-                                </Card.Body>
-                            </Card>
                             <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
                                 <Card.Body>
                                     <Card.Title>{posts[1].title}</Card.Title>
@@ -147,6 +138,15 @@ function PortfolioPage({ posts }) {
                                         {posts[1].blurb}
                                     </Card.Text>
                                     <LinkToArticle id ={posts[1]._id} title={0}/>
+                                </Card.Body>
+                            </Card>
+                            <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                                <Card.Body>
+                                    <Card.Title>{posts[2].title}</Card.Title>
+                                    <Card.Text>
+                                        {posts[2].blurb}
+                                    </Card.Text>
+                                    <LinkToArticle id ={posts[2]._id} title={0}/>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -161,8 +161,7 @@ function PortfolioPage({ posts }) {
 }
 export async function getStaticProps() {
     const res = await API.getAllPosts();
-    const posts = await res.data;
-    
+    const posts = await res.data.reverse();
     return {
         props: {
             posts

@@ -108,24 +108,7 @@ function Home({ posts }) {
 
 export async function getStaticProps() {
   const res = await API.getAllPosts();
-  const posts = await res.data;
-/*
-  let recentGenres = {
-    poem: '',
-    politics: '',
-    mental: ''
-  }
-  posts.map((post, i) => {
-    if (post.genre === 'Poetry' && recentGenres.poem === '') {
-      recentGenres.poem = { post }
-    } else if (post.genre === "Politics" && recentGenres.politics === '') {
-      recentGenres.politics = { post }
-    } else if (post.genre === "Mental Health" && recentGenres.mental === '') {
-      recentGenres.mental = { post }
-    } 
-    return recentGenres;
-  });
-  */
+  const posts = await res.data.reverse();
   return {
     props: {
       posts: posts
