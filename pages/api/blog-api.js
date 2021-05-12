@@ -27,7 +27,13 @@ const API = {
         return axios.get(queryURL + "/conlang/tukren/wordlist/" + word);
     },
     createWord: function(obj) {
-        return axios.post(queryURL + "/conlang/tukren/wordlist", obj);
+        if (obj.validate === "aholucascode@gmail.com") {
+            let validObj = {
+                data: obj.data,
+                key: process.env.WORD_KEY 
+            }
+            return axios.post(queryURL + "/conlang/tukren/wordlist", validObj);
+        } 
     }
     
 }

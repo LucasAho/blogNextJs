@@ -11,9 +11,6 @@ import ConLangLayout from '../../../components/conlangLayout';
 import PhonologyTable from '../../../components/PhonologyTable';
 
 export default function Tukren() {
-    const [show, setShow] = useState(false);
-    const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
     return (
         <Container>
             <Head>
@@ -21,7 +18,12 @@ export default function Tukren() {
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
-            <BlogNav handleShow = {handleShow} title='World of Maalima'/>
+            <BlogNav 
+                title="Maalima"
+                tLink="/worldbuild/home"
+                title2="Blog"
+                t2Link="/"
+            />
             <Row>
                 <Col sm={2}>
                     Maalima Wiki

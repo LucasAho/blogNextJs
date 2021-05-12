@@ -19,7 +19,12 @@ function WbHome() {
             </Head>
 
             <Container>
-                <BlogNav handleShow = {handleShow} title="Hestafan Universe"/>
+                <BlogNav 
+                    title="Maalima"
+                    t2Link="/"  
+                    title2="Blog"
+                    tLink="/worldbuild/home"
+                />
                 <Row>
                     <h4>Mapping</h4>
                     <h6>World Map</h6>

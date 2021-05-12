@@ -5,16 +5,17 @@ import Card from 'react-bootstrap/Card';
 import Container from "react-bootstrap/Container";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useUser } from "@auth0/nextjs-auth0"
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import { useUser } from "@auth0/nextjs-auth0";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import BlogNav from "../../../../components/blogNav";
 
 function Lexicon({ words }){
     const { user } = useUser();
 
     const [word, setWord] = useState({});
     const onFormSubmit = e => {
-        e.preventDefault()
+        //e.preventDefault()
         const formData = new FormData(e.target),
             formDataObj = Object.fromEntries(formData.entries())
         if (user.name === "aholucascode@gmail.com") {
@@ -24,6 +25,12 @@ function Lexicon({ words }){
     }
     return(
         <Container>
+            <BlogNav
+                title="Maalima"
+                tLink="/worldbuild/home"
+                title2="Blog"
+                t2Link="/"
+            />
             {user && (user.name === "aholucascode@gmail.com" ? 
                 <Form onSubmit={onFormSubmit}>
                     <Row>

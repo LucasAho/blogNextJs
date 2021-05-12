@@ -23,11 +23,17 @@ function Home({ posts }) {
       </Head>
 
       <Container>
-          <BlogNav handleShow = {handleShow} title="The Creative Spectrum"/>
+          <BlogNav 
+            title="The Creative Spectrum"
+            tLink="/"  
+            title2="Maalima"
+            t2Link="/worldbuild/home"
+          />
           <h6>
             Once this website starts to near completion, I intend to post regularly on a range of topics. I also include a link to my work in progress worldbuilding page and some of the poems and short stories I've written.
             Thanks for checking it out and bearing with the website while it undergoes construction.
             {/*Feel free to <Link href="/contact">contact me</Link>*/}
+            
           </h6>
           <Row>
           <h4>Most Recent Articles</h4>
