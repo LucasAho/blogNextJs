@@ -8,6 +8,7 @@ class Login extends Component {
             <div>
                 <a href="/api/auth/login">Login</a>
                 <Profile/>
+                <a href="/api/auth/logout">Logout</a>
             </div>
         )
         
