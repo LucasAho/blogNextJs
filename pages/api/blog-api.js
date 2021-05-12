@@ -22,6 +22,12 @@ const API = {
     
     getAllWords: function() {
         return axios.get(queryURL + "/conlang/tukren/wordlist");
+    },
+    getWord: function(word) {
+        return axios.get(queryURL + "/conlang/tukren/wordlist/" + word);
+    },
+    createWord: function(obj) {
+        return axios.post(queryURL + "/conlang/tukren/wordlist", obj);
     }
     
 }
