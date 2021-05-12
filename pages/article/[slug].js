@@ -38,7 +38,12 @@ const Article = (props) => {
     return (
         <Container>
 
-            <BlogNav/>
+            <BlogNav
+                title="The Creative Spectrum"
+                tLink="/"  
+                title2="Maalima"
+                t2Link="/worldbuild/home"
+            />
 
             <Row>
                 <Col md={9}>
