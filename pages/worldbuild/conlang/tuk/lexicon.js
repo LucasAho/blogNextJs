@@ -12,7 +12,6 @@ import BlogNav from "../../../../components/blogNav";
 
 function Lexicon({ words }){
     const { user } = useUser();
-
     const [word, setWord] = useState({});
     const onFormSubmit = e => {
         //e.preventDefault()
