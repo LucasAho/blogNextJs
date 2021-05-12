@@ -10,7 +10,6 @@ import LinkToArticle from "../components/LinkToArticle";
 import API from './api/blog-api';
 import Link from "next/link"
 import Button from "react-bootstrap/Button";
-import BlogHomeLayout from '../components/BlogHomeLayout';
 
 function Home({ posts }) {
     const [show, setShow] = useState(false);
@@ -31,7 +30,7 @@ function Home({ posts }) {
             Feel free to <Link href="/contact">contact me</Link>
           </h6>
           <Row>
-          <h4>Most Recent Article</h4>
+          <h4>Most Recent Articles</h4>
             <Col>
               <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
                   <Card.Body>
@@ -84,23 +83,6 @@ function Home({ posts }) {
                   </Card.Body>
               </Card>
             </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '75%' }}>
-                  <Card.Body>
-                      <Card.Header><h5>{posts[4].title}</h5></Card.Header>
-                      <Card.Img src={posts[4].image}></Card.Img>
-                      <Card.Text>
-                          {posts[4].blurb}
-                      </Card.Text>
-                      <LinkToArticle id ={posts[4]._id} title={0}/>
-                  </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-            </Col>
-
           </Row>
       </Container>
     </div>

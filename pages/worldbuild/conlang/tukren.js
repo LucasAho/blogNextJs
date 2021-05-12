@@ -17,7 +17,7 @@ export default function Tukren() {
     return (
         <Container>
             <Head>
-                <title>Tukren Language</title>
+                <title>Tukren Constructed Language Documentation</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>

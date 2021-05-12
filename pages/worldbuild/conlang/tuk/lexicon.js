@@ -1,10 +1,30 @@
-import LexList from "../../../api/lexicon-api";
 import Table from "react-bootstrap/Table";
+import API from '../../../api/blog-api';
+import { useState } from "react";
+import Card from 'react-bootstrap/Card';
 import Container from "react-bootstrap/Container";
+import Col from 'react-bootstrap/Col';
 
-export default function Lexicon() {
+function Lexicon(){
     return(
         <Container>
+            {/*
+            <Card className="my-1 mx-auto justify-content-center flex-grow-1" /*style={{ width: '85%' }}>
+                <Card.Body>
+                    <Col md={6}>
+                        <Card.Header><h5>{word.conlang}</h5></Card.Header>
+                    </Col>
+                    <Col md={6}>
+                        <Card.Text>
+                            {word.english}
+                            {word.pos}
+                            {word.etymology}
+                            {word.sentence}
+                        </Card.Text>
+                    </Col>
+                </Card.Body>
+            </Card>
+            <hr/>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -14,17 +34,30 @@ export default function Lexicon() {
                     </tr>
                 </thead>
                 <tbody>
-                    {LexList.map(word => {
+                    {words.map(word => {
                         return(
                             <tr>
-                                <th scope="row">{word.Tukren}</th>
+                                <th scope="row">{word.conlang}</th>
                                 <td>{word.PoS}</td>
-                                <td>{word.English}</td>
+                                <td>{word.english}</td>
                             </tr>
                         )
                     })}
                 </tbody>
             </Table>
+    */}
         </Container>
     )
 } 
+
+export async function getStaticProps() {
+    const res = await API.getAllWords();
+ //  const words = await res.data();
+    return {
+        props: {
+            words: ""
+        }
+    }
+}
+
+export default Lexicon;

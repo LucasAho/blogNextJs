@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const queryURL = "https://guarded-bastion-16379.herokuapp.com" 
+const queryURL = "https://guarded-bastion-16379.herokuapp.com/api" 
 
 const API = {
     //Article Routes
@@ -18,6 +18,10 @@ const API = {
     },
     createArticle: function(obj) {
         return axios.post(queryURL + "/blog/create", obj);
+    },
+    
+    getAllWords: function() {
+        return axios.get(queryURL + "/conlang/tukren/wordlist");
     }
     
 }
