@@ -70,3 +70,11 @@ a {
   width: 100%;
   align-items: center;
 }
+
+.dict-img {
+  display: block;
+  max-width:200px;
+  max-height:200px;
+  width: auto;
+  height: auto
+}

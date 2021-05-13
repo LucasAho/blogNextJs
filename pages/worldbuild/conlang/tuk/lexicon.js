@@ -108,9 +108,9 @@ function Lexicon({ words }){
                                 {word.etymology} 
                             </Card.Text>
                         </Col>
-                        {word.image == 1 ?
+                        {word.image ?
                             <Col>
-                                <Card.Img src={word.image}></Card.Img>
+                                <Card.Img className="dict-img mx-auto" src={word.image}></Card.Img>
                             </Col>
                             : null
                         }
