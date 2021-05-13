@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Link from "next/link";
 import Profile from "../../components/Profile";
 
 class Login extends Component {
@@ -6,9 +7,9 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <a href="/api/auth/login">Login</a>
+                <Link href="/api/auth/login">Login</Link>
                 <Profile/>
-                <a href="/api/auth/logout">Logout</a>
+                <Link href="/api/auth/logout">Logout</Link>
             </div>
         )
         
