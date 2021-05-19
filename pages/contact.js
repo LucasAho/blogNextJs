@@ -9,17 +9,21 @@ export default function Contact() {
         <Container>
             <Form name="contact" 
                 method="POST"
+                action="/success"
                 data-netlify="true"
-                onSubmit={(e)=>{
-                    e.preventDefault();
-                    Router.push('/success');
-                }}>
-                <input type="hidden" name="form-name" value="contact" />
+                data-netlify-honeypot="bot-field"
+                
+               // onSubmit={(e)=>{
+                    //e.preventDefault();
+                    //Router.push('/success');
+               // }}
+                >
+                <input type="hidden" name="bot-field" />
                 <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
                     <Form.Label htmlFor="yourname">Name</Form.Label>
                     <Form.Control name='name' id='yourname' placeholder="Benek Thrufyr" />
                 </Form.Group>
-                <Form.Group className="my-1" type='text' name='emailaddress' id='email-address' controlId="contactForm.ControlInput2">
+                <Form.Group className="my-1" type='email' name='emailaddress' id='email-address' controlId="contactForm.ControlInput2">
                     <Form.Label htmlFor="your-email" >Email address</Form.Label>
                     <Form.Control name='email' id='your-email' placeholder="name@example.com" />
                 </Form.Group>
