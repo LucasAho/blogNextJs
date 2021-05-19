@@ -66,7 +66,7 @@ function Home({ posts }) {
           </Row>
           <Row>
             <Col>
-              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '75%' }}>
+              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
                   <Card.Body>
                       <Card.Header><h5>{posts[2].title}</h5></Card.Header>
                       <Card.Img src={posts[2].image}></Card.Img>
@@ -78,7 +78,7 @@ function Home({ posts }) {
               </Card>
             </Col>
             <Col>
-              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '75%' }}>
+              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
                   <Card.Body>
                       <Card.Header><h5>{posts[3].title}</h5></Card.Header>
                       <Card.Img src={posts[3].image}></Card.Img>
