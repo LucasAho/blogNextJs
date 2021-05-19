@@ -80,6 +80,6 @@ a {
 }
 
 .decorated-link {
-  text-decoration: solid;
-  color: blue;
+  text-decoration: solid !important;
+  color: blue !important; 
 }
