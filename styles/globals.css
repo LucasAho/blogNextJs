@@ -78,3 +78,7 @@ a {
   width: auto;
   height: auto
 }
+
+.decorated-link {
+  text-decoration: solid;
+}

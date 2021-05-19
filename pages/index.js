@@ -32,7 +32,7 @@ function Home({ posts }) {
           <h6>
             Once this website starts to near completion, I intend to post regularly on a range of topics. I also include a link to my work in progress worldbuilding page and some of the poems and short stories I've written.
             Thanks for checking it out and bearing with the website while it undergoes construction.
-            Feel free to <Link href="/contact"><a>contact me</a></Link> (note that contact form has been a wee bit buggy, so if I don't get back to you, try connecting via my socials)
+            Feel free to <Link href="/contact" className="decorated-link">contact me</Link> (note that contact form has been a wee bit buggy, so if I don't get back to you, try connecting via my socials)
           </h6>
           <Row>
           <h4>Most Recent Articles</h4>
