@@ -8,12 +8,12 @@ export default function Contact() {
         <Container>
             <Form name="contact" 
                 method="POST"
-                data-netlify="true"
+                netlify
                 onSubmit={(e)=>{
                     e.preventDefault();
                     Router.push('/success');
                 }}>
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="contact" value="contact" />
                 <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
                     <Form.Label htmlFor="yourname">Name</Form.Label>
                     <Form.Control name='name' id='yourname' placeholder="Benek Thrufyr" />
