@@ -9,14 +9,14 @@ export default function Contact() {
         <Container>
             <Form name="contact" 
                 method="POST"
-                action="/success"
+                //action="/success"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 
-               // onSubmit={(e)=>{
-                    //e.preventDefault();
-                    //Router.push('/success');
-               // }}
+               onSubmit={(e)=>{
+                    e.preventDefault();
+                    Router.push('/success');
+               }}
                 >
                 <input type="hidden" name="bot-field" />
                 <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
