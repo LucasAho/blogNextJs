@@ -9,7 +9,7 @@ export default function Contact() {
         <Container>
             <Form name="contact" 
                 method="POST"
-                netlify
+                netlify-data="true"
                 onSubmit={(e)=>{
                     e.preventDefault();
                     Router.push('/success');
