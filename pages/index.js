@@ -68,24 +68,24 @@ function Home({ posts }) {
             <Col>
               <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
                   <Card.Body>
-                      <Card.Header><h5>{posts[2].title}</h5></Card.Header>
-                      <Card.Img src={posts[2].image}></Card.Img>
+                      <Card.Header><h5>{posts[1].title}</h5></Card.Header>
+                      <Card.Img src={posts[1].image}></Card.Img>
                       <Card.Text>
-                          {posts[2].blurb}
+                          {posts[1].blurb}
                       </Card.Text>
-                      <LinkToArticle id ={posts[2]._id} title={0}/>
+                      <LinkToArticle id ={posts[1]._id} title={0}/>
                   </Card.Body>
               </Card>
             </Col>
             <Col>
               <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
                   <Card.Body>
-                      <Card.Header><h5>{posts[3].title}</h5></Card.Header>
-                      <Card.Img src={posts[3].image}></Card.Img>
+                      <Card.Header><h5>{posts[2].title}</h5></Card.Header>
+                      <Card.Img src={posts[2].image}></Card.Img>
                       <Card.Text>
-                          {posts[3].blurb}
+                          {posts[2].blurb}
                       </Card.Text>
-                      <LinkToArticle id ={posts[3]._id} title={0}/>
+                      <LinkToArticle id ={posts[2]._id} title={0}/>
                   </Card.Body>
               </Card>
             </Col>
