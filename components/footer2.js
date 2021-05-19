@@ -17,7 +17,7 @@ export function Footer() {
                 <Navbar.Brand className="mx-4" href="https://github.com/LucasAho">
                     <FontAwesomeIcon icon={['fab', 'github']} />
                 </Navbar.Brand>
-                <Link href="/contact">
+                <Link href="/contact" as="/contact">
                     <Navbar.Brand className="mx-4 pointer-cursor" >
                         <FontAwesomeIcon icon={['fas', 'envelope']} />
                     </Navbar.Brand>

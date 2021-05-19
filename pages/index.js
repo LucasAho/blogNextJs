@@ -10,6 +10,7 @@ import LinkToArticle from "../components/LinkToArticle";
 import API from './api/blog-api';
 import Link from "next/link"
 import Button from "react-bootstrap/Button";
+import { Footer } from '../components/footer2';
 
 function Home({ posts }) {
     const [show, setShow] = useState(false);
@@ -90,6 +91,7 @@ function Home({ posts }) {
             </Col>
           </Row>
       </Container>
+      <Footer/>
     </div>
   )
 }
