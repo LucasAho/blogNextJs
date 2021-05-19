@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Router from "next/router";
 
+
 export default function Contact() {
     return (
         <Container>
