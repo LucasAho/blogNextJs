@@ -27,12 +27,18 @@ export default class ArticleLoader extends Component {
                 </Row>
                 <Row className='mr-1 mt-3'>
                     {article.paragraphs.map((p,i) => {
-                        return (
-                            <div key={i++}>
-                                {p} 
-                                <b/>
-                            </div>
-                        )
+                        if(p.length > 1) {
+                            return (
+                                <div key={i++}>
+                                    {p} 
+                                    <b/>
+                                </div>
+                            )
+                        } else if (p.length === 1) {
+                            return (
+                                <br key={i++}/>
+                            )
+                        }
                     })}
                 </Row>
             </Container> 

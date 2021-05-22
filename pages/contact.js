@@ -1,59 +1,68 @@
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Router from "next/router";
-
+import { useState } from 'react';
+import API from './api/blog-api';
+import Link from 'next/link';
 
 export default function Contact() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [submitted, setSubmitted] = useState(false);
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        let data = {
+            name, 
+            email,
+            message
+        }
+
+        API.sendContactForm(data)
+        .then(res => {
+            if (res.status === 200) {
+                setSubmitted(true);
+                setName('');
+                setEmail('');
+                setMessage('');
+            }
+        });
+    }
+
     return (
         <Container>
-            <Form name="contact" 
-                method="POST"
-                action="/success"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                
-               onSubmit={(e)=>{
-                    e.preventDefault();
-                    Router.push('/success');
-               }}
-                >
-                <input type="hidden" name="bot-field" />
-                <Form.Group className="my-1" type='text' name='fullname' id='fullname' controlId="contactForm.ControlInput1">
+            {submitted === false ?
+            <Form>
+                <Form.Group className="my-1" type='text' onChange={(e)=> {setName(e.target.value)}} name='fullname' id='fullname' >
                     <Form.Label htmlFor="yourname">Name</Form.Label>
-                    <Form.Control name='name' id='yourname' placeholder="Benek Thrufyr" />
+                    <Form.Control name='name' id='yourname' placeholder="Benek Rogar" />
                 </Form.Group>
-                <Form.Group className="my-1" type='email' name='emailaddress' id='email-address' controlId="contactForm.ControlInput2">
+                <Form.Group className="my-1" type='email'  onChange={(e)=> {setEmail(e.target.value)}} name='emailaddress' id='email-address'>
                     <Form.Label htmlFor="your-email" >Email address</Form.Label>
                     <Form.Control name='email' id='your-email' placeholder="name@example.com" />
                 </Form.Group>
-                <Form.Group className="my-1" type='text' name='emailaddress' id='email-address' controlId="exampleForm.ControlTextarea1">
+                <Form.Group className="my-1" type='text' onChange={(e)=> {setMessage(e.target.value)}} name='emailaddress' id='email-address'>
                     <Form.Label htmlFor='message-content'>Message</Form.Label>
                     <Form.Control as="textarea" name='message' rows={3} id='message-content' />
                 </Form.Group>
             
-                <Button type='submit' className="blue-bg">
+                <Button type='submit' onClick={e=>{handleSubmit(e)}} className="blue-bg">
                     Send
                 </Button>
             </Form>
-                {/*}
-            </form>
-                <p>
-                    <label htmlFor='name'>Name</label>
-                    <input type='text' id='name' name='name'/>
-                </p>
-                <p>
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id="email" name="email" />
-                </p>
-                <p>
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" name="message"></textarea>
-                </p>
-                <p>
-                    <button type="submit">Send</button>
-                </p>
-    */}
+            :
+            <div className='content-center'>
+                Form submitted! I will get back to you as soon 
+                as possible, thank you.
+                <br />
+                <Link
+                    href="/"
+                    as={`/`}>
+                        <a>Home</a>
+                </Link>
+            </div>
+}
         </Container>
     )
 }

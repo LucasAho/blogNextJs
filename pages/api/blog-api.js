@@ -34,6 +34,9 @@ const API = {
             }
             return axios.post(queryURL + "/conlang/tukren/wordlist", validObj);
         } 
+    },
+    sendContactForm: function(obj) {
+        return axios.post('/api/contact', obj);
     }
     
 }
