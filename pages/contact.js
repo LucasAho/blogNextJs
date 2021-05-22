@@ -58,11 +58,11 @@ export default function Contact() {
                 <br />
                 <Link
                     href="/"
-                    as={`/`}>
+                    as={'/'}>
                         <a>Home</a>
                 </Link>
             </div>
-}
+            }
         </Container>
     )
 }
