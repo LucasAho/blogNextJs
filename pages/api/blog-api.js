@@ -36,7 +36,7 @@ const API = {
         } 
     },
     sendContactForm: function(obj) {
-        return axios.post(queryURL + '/contact', obj);
+        return axios.post(queryURL + "/contact", obj);
     }
     
 }
