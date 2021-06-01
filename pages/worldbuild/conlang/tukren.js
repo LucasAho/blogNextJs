@@ -5,10 +5,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import BlogNav from '../../../components/blogNav';
 import LangSideBar from '../../../components/LangSideBar';
-import { useState } from "react";
 import { Element } from 'react-scroll';
 import ConLangLayout from '../../../components/conlangLayout';
 import PhonologyTable from '../../../components/PhonologyTable';
+import TukrenArticleTable from '../../../components/TukrenArticleTable';
+import TukrenPronounTable from '../../../components/TukrenPronounTable';
+import TukrenVerbTable from '../../../components/TukrenVerbTable';
 
 export default function Tukren() {
     return (
@@ -54,12 +56,43 @@ export default function Tukren() {
                     </Element>
                     <Element id='nouns' name='nouns'>
                         <ConLangLayout>
-                            <h6>Nouns</h6>
+                            <h4>Noun Morphology</h4>
+                            <h5>Articles</h5>
+                            <TukrenArticleTable/>
+                            <h5>Pronouns</h5>
+                            <TukrenPronounTable/>
                         </ConLangLayout>
                     </Element>
                     <Element id='verbs' name='verbs'>
                         <ConLangLayout>
-                            <h6>Verbs</h6>
+                            <h4>Verbs</h4>
+                            <h5>Verb Conjugation</h5>
+                            <p>
+                                If verb has front vowels, V = i or e. <br/>
+                                If verb has back vowels, V = u or o. <br/>
+                                If verb has mixed vowels, change last vowel in verb to match harmony of first vowel and V = a. <br/>
+                                If V is not a, V is the harmony pair of the last vowel in the verb. <br/>
+                            </p>
+                            <TukrenVerbTable/>
+                            <h5>Examples</h5>
+                            <h6>Colony Past Perfective</h6>
+                            <p>Our ancestors carved Bordekya</p>
+                            <p>Kaizli ronodar Bordekya gosufmok</p>
+                            <h6>Lifetime Past Habitual</h6>
+                            <p>I once ate fish frequently</p>
+                            <p>Y ribik gormgufu </p>
+                            <h6>Recent Past Imperfective</h6>
+                            <p>He was smithing a farming tool</p>
+                            <p>Fo sokutz sau'ketenwi</p>
+                            <h6>Present</h6>
+                            <p>I am eating fish</p>
+                            <p>Y ribik gorm</p>
+                            <h6>Future Perfective</h6>
+                            <p>The temple will command the King</p>
+                            <p>O'Yirtal die'barnakim catiznet</p>
+                            <h6>Colony Future Habitual</h6>
+                            <p>We will search for the Old Stone</p>
+                            <p>Doc'radren kai damiskebi</p>
                         </ConLangLayout>
                     </Element>
                     <Element id='words' name='words'>

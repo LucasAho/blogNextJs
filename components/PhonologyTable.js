@@ -2,7 +2,7 @@ import Table from "react-bootstrap/Table";
 
 export default function PhonologyTable() {
     return(
-        <Table striped bordered hover size="sm">
+        <Table striped bordered size="sm">
             <thead>
                 <tr>
                     <th scope="col"> </th>

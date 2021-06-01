@@ -36,7 +36,10 @@ export default class ArticleLoader extends Component {
                             )
                         } else if (p.length === 1) {
                             return (
-                                <br key={i++}/>
+                                <div key={i++}>
+                                    <br />
+                                    <br />
+                                </div>
                             )
                         }
                     })}

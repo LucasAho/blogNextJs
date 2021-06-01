@@ -55,7 +55,7 @@ function Home({ posts }) {
                       <Card.Header><h5>Tukren Phonology</h5></Card.Header>
                       <Card.Img src="https://i.imgur.com/qwsxzsC.jpg"></Card.Img>
                       <Card.Text>
-                          I am still deciding how to structure the conlang pages, so don't expect much here. 
+                        My most developed constructed language, proto-Tukren.
                       </Card.Text>
                       <Link href="/worldbuild/conlang/tukren">
                         <Button className="stretched-link primary-btn">See Post</Button>
