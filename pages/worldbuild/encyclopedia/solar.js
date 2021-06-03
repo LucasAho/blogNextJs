@@ -57,7 +57,51 @@ export default function SolarSystem(){
                         </Table>
                     </Row>
                     <Row>
-
+                        <h4>Planets (Most will remain unnamed until I have worked out the Hantui etymology for astronomy</h4>
+                        
+                        <h6>Planet 1</h6>
+                        <p>Distance: 0.19au</p>
+                        <p>Type: Terrestrial</p>
+                        
+                        <h6>Planet 2</h6>
+                        <p>Distance: 0.38au</p>
+                        <p>Type: Terrestrial</p>
+                        
+                        <h6>Planet 3</h6>
+                        <p>Distance: 0.64au</p>
+                        <p>Type: Terrestrial</p>
+                        
+                        <h6>Maalima</h6>
+                        <p>Distance: 0.98au</p>
+                        <p>Type: Terrestrial</p>
+                        
+                        <h6>Planet 5</h6>
+                        <p>Distance: 1.67au</p>
+                        <p>Type: Terrestrial</p>
+        
+                        <h6>Planet 6</h6>
+                        <p>Distance: 2.61au</p>
+                        <p>Type: Dwarf Planet</p>
+                        
+                        <h6>Planet 7</h6>
+                        <p>Distance: 4.56au</p>
+                        <p>Type: Gas Giant</p>
+            
+                        <h6>Planet 8</h6>
+                        <p>Distance: 8.35au</p>
+                        <p>Type: Gas Giant</p>
+                        
+                        <h6>Planet 9</h6>
+                        <p>Distance: 12.02au</p>
+                        <p>Type: Ice Giant</p>
+                        
+                        <h6>Planet 10</h6>
+                        <p>Distance: 19.86au</p>
+                        <p>Type: Ice Giant</p>
+                        
+                        <h6>Planet 11</h6>
+                        <p>Distance: 36.02au</p>
+                        <p>Type: Dwarf Planet</p>
                     </Row>
                 </Col>
 

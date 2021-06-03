@@ -65,13 +65,14 @@ export default function Tukren() {
                         <TukrenArticleTable/>
                         <h5>Pronouns</h5>
                         <TukrenPronounTable/>
-                        <h5>AFfixs</h5>
+                        <h5>Affixes</h5>
                         <p>Plurality is marked by the ro- prefix</p>
                         <p>A person associated with... is marked by the na- prefix. In English this is done with the -er suffix, as in "hunter".</p>
                     </Element>
                     <Element id='verbs' name='verbs'>
                         <h4>Verb Morphology</h4>
                         <h5>Verb Conjugation</h5>
+                        <h6>Vowel Harmony Rules</h6>
                         <p>
                             If verb has front vowels, V = i or e. <br/>
                             If verb has back vowels, V = u or o. <br/>
