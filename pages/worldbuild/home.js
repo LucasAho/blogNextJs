@@ -42,6 +42,7 @@ function WbHome() {
                     <h6>Species</h6>
                     <h6>Religions</h6>
                     <h6>Governments</h6>
+                    <h6><Link href="/worldbuild/encyclopedia/solar">Solar System</Link></h6>
                 </Row>
             </Container>
         </div>
