@@ -58,6 +58,8 @@ export default function Tukren() {
                     </Element>
                     <Element id='nums' name='nums'>
                         <h4>Numbers</h4>
+                        <p>Tukren uses a base 6 number system. Hexagon is the bestagon.</p>
+                        
                     </Element>
                     <Element id='nouns' name='nouns'>
                         <h4>Noun Morphology</h4>
