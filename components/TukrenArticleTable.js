@@ -18,7 +18,7 @@ export default function TukrenArticleTable() {
                 <tr>
                     <th scope="row">Neutral</th>
                     <td>Di</td>
-                    <td>Die</td>
+                    <td>Dai</td>
                     <td>Mi</td>
                     <td>Dim</td>
                     <td>Baf</td>
@@ -48,7 +48,7 @@ export default function TukrenArticleTable() {
                     <td>Do</td>
                     <td>Dom</td>
                     <td>Doc</td>
-                    <td>Dai</td>
+                    <td>Dei</td>
                     <td>No</td>
                 </tr>
             </tbody>

@@ -8,8 +8,11 @@ import Row from 'react-bootstrap/Row';
 import { useUser } from "@auth0/nextjs-auth0";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import BlogNav from "../../../../components/blogNav";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import BlogNav from "../../../../components/blogNav";
+import DictionaryForm from "../../../../components/DictionaryForm";
+
 
 function Lexicon({ words }){
     const { user } = useUser();
@@ -45,6 +48,10 @@ function Lexicon({ words }){
                 t2Link="/"
             />
             {user && (user.name === "aholucascode@gmail.com" ? 
+                <DictionaryForm
+                    onFormSubmit={onFormSubmit}
+                />
+                /*
                 <Form onSubmit={onFormSubmit}>
                     <Row>
                         <Col>
@@ -82,13 +89,6 @@ function Lexicon({ words }){
                                 />
                             </Form.Group>
                             <Form.Group controlId="newWord.ControlInput1">
-                                <Form.Label>Etymology</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="etymology"
-                                />
-                            </Form.Group>
-                            <Form.Group controlId="newWord.ControlInput1">
                                 <Form.Label>Image Link</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -101,6 +101,7 @@ function Lexicon({ words }){
                         </Button>
                     </Row>
                 </Form>
+                */
                 :
                 null
             )}
@@ -118,10 +119,6 @@ function Lexicon({ words }){
                             <Card.Text>
                                 Used in a sentence: &nbsp;  
                                 {word.sentence} 
-                            </Card.Text>
-                            <Card.Text>
-                                Etymology: &nbsp;
-                                {word.etymology} 
                             </Card.Text>
                         </Col>
                         {word.image ?

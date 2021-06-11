@@ -3,12 +3,12 @@ import '../styles/custom.scss';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faEnvelope, faSort } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faEnvelope, faSort, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { UserProvider } from '@auth0/nextjs-auth0';
 
 config.autoAddCss = false; 
 library.add(
-  faGithub, faBars, faSort, faLinkedin, faInstagram, faEnvelope
+  faGithub, faAngleDown, faBars, faSort, faLinkedin, faInstagram, faEnvelope
 );
 
 
