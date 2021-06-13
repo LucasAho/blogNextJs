@@ -58,8 +58,8 @@ function PortfolioPage({ posts }) {
                                 <Carousel.Item interval={5000}>
                                     <img
                                         className="d-block w-100"
-                                        src="https://i.imgur.com/Po4afuv.jpg"
-                                        alt="Hiking Photo"
+                                        src="https://i.imgur.com/uvF9lH3.jpg"
+                                        alt="Kelso Ridge Slide"
                                     />
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
@@ -72,8 +72,8 @@ function PortfolioPage({ posts }) {
                                 <Carousel.Item interval={5000}>
                                     <img
                                         className="d-block w-100"
-                                        src="https://i.imgur.com/238uTzk.jpg"
-                                        alt="Hiking Photo"
+                                        src="https://i.imgur.com/yHyv7Yk.jpg"
+                                        alt="Dead Dog Glissade"
                                     />
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
@@ -86,8 +86,8 @@ function PortfolioPage({ posts }) {
                                 <Carousel.Item interval={5000}>
                                     <img
                                         className="d-block w-100"
-                                        src="https://i.imgur.com/bf1GYPn.jpg"
-                                        alt="Hiking Photo"
+                                        src="https://i.imgur.com/KpdFJUr.jpg"
+                                        alt="Torrey's Summit"
                                     />
                                 </Carousel.Item>
                             </Carousel>
@@ -113,7 +113,7 @@ function PortfolioPage({ posts }) {
                 <Container className="pt-3" style={{ backgroundColor: "#180D35" }}>
                     <SectionHeader
                         titleText="The Creative Spectrum"
-                        subText="My blog for sharing my creative works and the philosophies behind them"
+                        subText="My blog for sharing my poetry, short stories, and philisophical essays"
                         variant="p"
                         color="light"
                     />

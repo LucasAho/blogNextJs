@@ -85,19 +85,6 @@ export default function Tukren() {
                             <p>The last syllable is stressed except with irregular words.</p>
                         </div>
                     </Element>
-                    <Element id='deriv' name='deriv'>
-                        <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={toggleMorphology}>
-                            
-                            <hr></hr>
-                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}} icon={['fas', 'angle-down']} />
-                            <h2>Morphology</h2>
-                        </div>
-                        <div style={{
-                            display: morphShow ?"block":"none"
-                        }}>
-                            <p>These are words</p>
-                        </div>
-                    </Element>
                     <Element id='syntax' name='syntax'>
                         <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={toggleSyntax}>
                             <hr></hr>
@@ -112,12 +99,12 @@ export default function Tukren() {
                             <p>Tukren is a Head-Final language.</p>
                             <h6>Example</h6>
                             <p>The person sees the fish</p>
-                            <p>Di fam dai rĩbik gõsuhf</p>
+                            <p>Di fam dai rĩbik kim</p>
                             <h4>Adjectives</h4>
                             <p>Adjectives precede their nouns.</p>
                             <h6>Example</h6>
                             <p>The person sees the big fish</p>
-                            <p>Di fam dai tazk ribik gõsuhf</p>
+                            <p>Di fam dai tazk ribik kim</p>
                             <h4>Adposition</h4>
                             <p>Tukren uses post-position/post-positional phrases in the order of Time->Manner->Place. Post-position words are derived from verbs</p>
                             <h6>Example</h6>
@@ -130,57 +117,72 @@ export default function Tukren() {
                             <p>Si barnakim zlat</p>
                             <h4>Adverbs</h4>
                             <p>Adverbs can be freely positioned before or after the subject or before the verb.</p>
+                            {/*
                             <h4>Other Exceptions</h4>
                             <p>S-IDO-DO-V when speaking of multiple objects</p>
                             <p>Topic of a sentence can replace the Subject, and it is the job of articulation to specificy part of speech</p>
                             <p>The God Radren is always the topic of a statement, and is always spoken first.</p>
+                            */}
+                        </div>
+                    </Element>
+                    <Element id='deriv' name='deriv'>
+                        <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={toggleMorphology}>
+                            
+                            <hr></hr>
+                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}} icon={['fas', 'angle-down']} />
+                            <h2>Morphology</h2>
+                        </div>
+                        <div style={{
+                            display: morphShow ?"block":"none"
+                        }}>
+                            <p>Plurality marked with 'ro-'</p>
+                            <h3>Noun Morphology</h3>
+                            <h4>Articles</h4>
+                            <TukrenArticleTable/>
+                            <h4>Pronouns</h4>
+                            <TukrenPronounTable/>
+                            <h4>Affixes</h4>
+                            <p>Plurality is marked by the ro- prefix</p>
+                            <p>A person associated with... is marked by the na- prefix. In English this is done with the -er suffix, as in "hunter".</p>
+                            <h3>Verb Morphology</h3>
+                            <h4>Auxilliary Verbs</h4>
+                            <TukrenVerbTable/>
+                            <h5>Examples</h5>
+                            <Row>
+                                <Col>
+                                    <h6>Perfective Aspect</h6>
+                                    <p>
+                                        The First King carved Bordekya.
+                                    </p>
+                                    <p>
+                                        O tadin barakim sau bordekya gosuhf nodof.
+                                    </p>
+                                </Col>
+                                <Col>
+                                    <h6>Imperfective Aspect</h6>
+                                    <p>
+                                        The carving guild was forming.
+                                    </p>
+                                    <p>
+                                        Di roheihli mot nodin
+                                    </p>
+                                </Col>
+                                <Col>
+                                    <h6>Habitual Aspect</h6>
+                                    <p>
+                                        The colony searched.
+                                    </p>
+                                    <p>
+                                        Di famot damis noduk.
+                                    </p>
+                                </Col>
+                            </Row>
                         </div>
                     </Element>
                     <Element id='nums' name='nums'>
                         <h4>Numbers</h4>
                         <p>Tukren uses a base 6 number system. Hexagon is the bestagon afterall.</p>
                         <TukrenNumberTable/>
-                    </Element>
-                    <Element id='nouns' name='nouns'>
-                        <h4>Noun Morphology</h4>
-                        <h5>Articles</h5>
-                        <TukrenArticleTable/>
-                        <h5>Pronouns</h5>
-                        <TukrenPronounTable/>
-                        <h5>Affixes</h5>
-                        <p>Plurality is marked by the ro- prefix</p>
-                        <p>A person associated with... is marked by the na- prefix. In English this is done with the -er suffix, as in "hunter".</p>
-                    </Element>
-                    <Element id='verbs' name='verbs'>
-                        <h4>Verb Morphology</h4>
-                        <h5>Verb Conjugation</h5>
-                        <h6>Vowel Harmony Rules</h6>
-                        <p>
-                            If verb has front vowels, V = i or e. <br/>
-                            If verb has back vowels, V = u or o. <br/>
-                            If verb has mixed vowels, change last vowel in verb to match harmony of first vowel and V = a. <br/>
-                            If V is not a, V is the harmony pair of the last vowel in the verb. <br/>
-                        </p>
-                        <TukrenVerbTable/>
-                        <h5>Examples</h5>
-                        <h6>Colony Past Perfective</h6>
-                        <p>Our ancestors carved Bordekya</p>
-                        <p>Kaizli ronodar Bordekya gosufmok</p>
-                        <h6>Lifetime Past Habitual</h6>
-                        <p>I once ate fish frequently</p>
-                        <p>Y ribik gormgufu </p>
-                        <h6>Recent Past Imperfective</h6>
-                        <p>He was smithing a farming tool</p>
-                        <p>Fo sokutz sau'ketenwi</p>
-                        <h6>Present</h6>
-                        <p>I am eating fish</p>
-                        <p>Y ribik gorm</p>
-                        <h6>Future Perfective</h6>
-                        <p>The temple will command the King</p>
-                        <p>O'Yirtal die'barnakim catiznet</p>
-                        <h6>Colony Future Habitual</h6>
-                        <p>We will search for the Old Stone</p>
-                        <p>Doc'radren kai damiskebi</p>
                     </Element>
                     <Element id='words' name='words'>
                         <h6><Link href="/worldbuild/conlang/tuk/lexicon">Dictionary</Link></h6>

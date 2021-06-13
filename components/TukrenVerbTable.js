@@ -6,29 +6,29 @@ export default function TukrenArticleTable() {
             <thead>
                 <tr>
                     <th scope="col"> </th>
-                    <th scope="col">Perf.</th>
-                    <th scope="col">Imperf.</th>
-                    <th scope="col">Habit.</th>
+                    <th scope="col">Perfective</th>
+                    <th scope="col">Imperfective</th>
+                    <th scope="col">Habitual</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">Colony Past</th>
-                    <td>-mVk</td>
-                    <td>-mV</td>
-                    <td>-mVsV</td>
+                    <td>Nodof</td>
+                    <td>Nodin</td>
+                    <td>Noduk</td>
                 </tr>
                 <tr>
                     <th scope="row">Lifetime Past</th>
-                    <td>-gVf</td>
-                    <td>-gV</td>
-                    <td>-gVfV</td>
+                    <td>Gof</td>
+                    <td>Binof</td>
+                    <td>Goden</td>
                 </tr>
                 <tr>
                     <th scope="row">Recent Past</th>
-                    <td>-wVl</td>
-                    <td>-wV</td>
-                    <td>-wVlV</td>
+                    <td>Sahil</td>
+                    <td>Bin</td>
+                    <td>Sudan</td>
                 </tr>
                 <tr>
                     <th scope="row">Present</th>
@@ -38,15 +38,15 @@ export default function TukrenArticleTable() {
                 </tr>
                 <tr>
                     <th scope="row">Future</th>
-                    <td>-nVt</td>
-                    <td>-nV</td>
-                    <td>-nVtV</td>
+                    <td>Nat</td>
+                    <td>Nabi</td>
+                    <td>Nadun</td>
                 </tr>
                 <tr>
                     <th scope="row">Colony Future</th>
-                    <td>-kVb</td>
-                    <td>-kV</td>
-                    <td>-kVbV</td>
+                    <td>Kob</td>
+                    <td>Koben</td>
+                    <td>Dunekta</td>
                 </tr>
             </tbody>
         </Table>
