@@ -10,11 +10,15 @@ import LinkToArticle from "../components/LinkToArticle";
 import API from './api/blog-api';
 import Link from "next/link"
 import Button from "react-bootstrap/Button";
+import SectionHeader from "../components/portfolioSectionHeader";
 import { Footer } from '../components/footer2';
 
-function Home({ posts }) {
-    const [show, setShow] = useState(false);
-    const handleShow = () => setShow(true);
+function Home({ essays, poems }) {
+  
+  String.prototype.trimEllip = function (length) {
+    return this.length > length ? this.substring(0, length) + "..." : this;
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -30,78 +34,131 @@ function Home({ posts }) {
             title2="Maalima"
             t2Link="/worldbuild/home"
           />
-          <h6>
-            Once this website starts to near completion, I intend to post regularly on a range of topics. I also include a link to my work in progress worldbuilding page and some of the poems and short stories I've written.
-            Thanks for checking it out and bearing with the website while it undergoes construction.
-            {/*Feel free to <Link href="/contact" ><a className="decorated-link">contact me</a></Link> (note that contact form has been a wee bit buggy, so if I don't get back to you, try connecting via my socials)*/}
-          </h6>
-          <Row>
-          <h4>Most Recent Articles</h4>
-            <Col>
-              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
-                  <Card.Body>
-                      <Card.Header><h5>{posts[0].title}</h5></Card.Header>
-                      <Card.Img src={posts[0].image}></Card.Img>
-                      <Card.Text>
-                          {posts[0].blurb}
-                      </Card.Text>
-                      <LinkToArticle id ={posts[0]._id} title={0}/>
-                  </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
-                  <Card.Body>
-                      <Card.Header><h5>Tukren Phonology</h5></Card.Header>
-                      <Card.Img src="https://i.imgur.com/qwsxzsC.jpg"></Card.Img>
-                      <Card.Text>
-                        My most developed constructed language, proto-Tukren.
-                      </Card.Text>
-                      <Link href="/worldbuild/conlang/tukren">
-                        <Button className="stretched-link primary-btn">See Post</Button>
-                      </Link>
-                  </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
-                  <Card.Body>
-                      <Card.Header><h5>{posts[1].title}</h5></Card.Header>
-                      <Card.Img src={posts[1].image}></Card.Img>
-                      <Card.Text>
-                          {posts[1].blurb}
-                      </Card.Text>
-                      <LinkToArticle id ={posts[1]._id} title={0}/>
-                  </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card className="my-1 mx-auto justify-content-center flex-grow-1" style={{ width: '85%' }}>
-                  <Card.Body>
-                      <Card.Header><h5>{posts[2].title}</h5></Card.Header>
-                      <Card.Img src={posts[2].image}></Card.Img>
-                      <Card.Text>
-                          {posts[2].blurb}
-                      </Card.Text>
-                      <LinkToArticle id ={posts[2]._id} title={0}/>
-                  </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-      </Container>
+        <Container className="py-3">
+            <Row>
+              <SectionHeader
+                  titleText="Worldbuilding"
+                  subText="The wiki for my constructed languages and the worldbuilding that goes towards my work-in-progress sci-fantasy series."
+                  variant="p"
+                  color="dark"
+              />
+              <Col md={6}>
+                <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                        <Card.Img  variant='top' src="https://i.imgur.com/r837OdL.png"></Card.Img>
+                    <Card.Body>
+                        <Card.Title>Constructed Languages</Card.Title>
+                        <Card.Text>
+                          Documentation for my constructed languages, slowly updated as I have time.
+                        </Card.Text>
+                        <Link href="/worldbuild/home">Wiki</Link>
+                    </Card.Body>
+                </Card>
+              </Col>
+              <Col md={6}>
+                <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                        <Card.Img  variant='top' src="https://i.imgur.com/r837OdL.png"></Card.Img>
+                    <Card.Body>
+                        <Card.Title>Wiki</Card.Title>
+                        <Card.Text>
+                          The wiki page for the setting of my sci-fantasy novel
+                        </Card.Text>
+                        <Link href="/worldbuild/home">Wiki</Link>
+                    </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+        </Container>
+        <Container className="purple-bg py-3">
+            <Row>
+              <SectionHeader
+                  titleText="Essays"
+                  subText="Political and philosophical essays"
+                  variant="p"
+                  color="light"
+              />
+              <Col md={6}>
+                <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                        <Card.Img variant='top' className="blog-card" src={essays[0].image} />
+                    <Card.Body>
+                        <Card.Title>{essays[0].title}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">{essays[0].dateWritten}</Card.Subtitle>
+                        <Card.Text>
+                            {essays[0].blurb}
+                        </Card.Text>
+                        <LinkToArticle id ={essays[0]._id} title={0}/>
+                    </Card.Body>
+                </Card>
+              </Col>
+              <Col md={6}>
+                <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                        <Card.Img variant='top' className="blog-card" src={essays[1].image} />
+                    <Card.Body>
+                        <Card.Title>{essays[1].title}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">{essays[1].dateWritten}</Card.Subtitle>
+                        <Card.Text>
+                            {essays[1].blurb}
+                        </Card.Text>
+                        <LinkToArticle id ={essays[1]._id} title={0}/>
+                    </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+          </Container>
+          <Container className="py-3">
+              <Row>
+                <SectionHeader
+                    titleText="Poetry"
+                    subText="I am slowly learning how to write poetry for the sake of my novel, I publish what I write here. While I have come a long way since my first poem, I am far from mastering the art."
+                    variant="p"
+                    color="dark"
+                />
+                <Col md={6}>
+                  <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                      <Card.Img variant='top' className="blog-card" src={poems[0].image} />
+                      <Card.Body>
+                          <Card.Title>{poems[0].title}</Card.Title>
+                          <Card.Subtitle className="mb-2 text-muted">{poems[0].dateWritten}</Card.Subtitle>
+                          <Card.Text>
+                              {
+                                poems[0].blurb.trimEllip(150)
+                              }
+                          </Card.Text>
+                          <LinkToArticle id ={poems[0]._id} title={0}/>
+                      </Card.Body>
+                  </Card>
+                </Col>
+                <Col md={6}>
+                  <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                      <Card.Img variant='top' className="blog-card" src={poems[1].image} />
+                      <Card.Body>
+                          <Card.Title>{poems[1].title}</Card.Title>
+                          <Card.Subtitle className="mb-2 text-muted">{poems[1].dateWritten}</Card.Subtitle>
+                          <Card.Text>
+                              {
+                                poems[1].blurb.trimEllip(150)
+                              }
+                          </Card.Text>
+                          <LinkToArticle id ={poems[1]._id} title={0}/>
+                      </Card.Body>
+                  </Card>
+                </Col>
+              </Row>
+          </Container>
+        </Container>
       <Footer/>
     </div>
   )
 }
 
 export async function getStaticProps() {
-  const res = await API.getAllPosts();
-  const posts = await res.data.reverse();
+  const essays = await API.getTopicsWhere("Philosophy");
+  const essayPosts = await essays.data.reverse();
+  const poems = await API.getTopicsWhere("Poetry");
+  const poemPosts = await poems.data.reverse();
   return {
     props: {
-      posts: posts
+      essays: essayPosts,
+      poems: poemPosts
     }
   }
 }

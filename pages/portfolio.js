@@ -46,46 +46,46 @@ function PortfolioPage({ posts }) {
                                 it will be regularly updated as I take on new projects. Please feel free to connect via any of the socials I have linked below.
                             </div>
                         </Col>
-                        <Col>
+                        <Col style={{ height: "500px" }}>
                             <Carousel prevLabel="" nextLabel="">
                                 <Carousel.Item interval={5000}>
                                     <img
-                                        className="d-block w-100"
+                                        className="carousel-img"
                                         src="https://i.imgur.com/6LtK6k6.jpg"
                                         alt="Fulford Slide"
                                     />
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
                                     <img
-                                        className="d-block w-100"
+                                        className="carousel-img"
                                         src="https://i.imgur.com/uvF9lH3.jpg"
                                         alt="Kelso Ridge Slide"
                                     />
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
                                     <img
-                                        className="d-block w-100"
+                                        className="carousel-img"
                                         src="https://i.imgur.com/gw9gL7s.jpg"
                                         alt="Climb Boulder"
                                     />
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
                                     <img
-                                        className="d-block w-100"
+                                        className="carousel-img"
                                         src="https://i.imgur.com/yHyv7Yk.jpg"
                                         alt="Dead Dog Glissade"
                                     />
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
                                     <img
-                                        className="d-block w-100"
+                                        className="carousel-img"
                                         src="https://i.imgur.com/iR3Bd5r.jpg"
                                         alt="Climb Dyno"
                                     />
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
                                     <img
-                                        className="d-block w-100"
+                                        className="carousel-img"
                                         src="https://i.imgur.com/KpdFJUr.jpg"
                                         alt="Torrey's Summit"
                                     />

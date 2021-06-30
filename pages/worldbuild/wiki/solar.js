@@ -25,7 +25,10 @@ export default function SolarSystem(){
                     <h2>Solar System</h2>
                     <Row>
                         <h4>Amatia</h4>
-                        <p>The mother star of the planet Maalima</p>
+                        <h6>The mother star of the planet Maalima</h6>
+                        <p>Noticed for its similarities to the system of Earth, the solar system of Amatia was quickly colonized during the expansion.</p>
+                        <p>After the first rift, humanity was scattered, and the planet Maalima was left to its own devices for eons.</p>
+                        
                         <Table striped bordered size="sm">
                             <tbody>
                                 <tr>
@@ -57,7 +60,7 @@ export default function SolarSystem(){
                         </Table>
                     </Row>
                     <Row>
-                        <h4>Planets (Most will remain unnamed until I have worked out the Hantui etymology for astronomy</h4>
+                        <h4>Planets <small>(Most will remain unnamed until I have worked out the Hantui etymology for astronomy)</small></h4>
                         
                         <h6>Planet 1</h6>
                         <p>Distance: 0.19au</p>
@@ -74,7 +77,7 @@ export default function SolarSystem(){
                         <h6>Maalima</h6>
                         <p>Distance: 0.98au</p>
                         <p>Type: Terrestrial</p>
-                        
+                                                
                         <h6>Planet 5</h6>
                         <p>Distance: 1.67au</p>
                         <p>Type: Terrestrial</p>
@@ -84,19 +87,19 @@ export default function SolarSystem(){
                         <p>Type: Dwarf Planet</p>
                         
                         <h6>Planet 7</h6>
-                        <p>Distance: 4.56au</p>
+                        <p>Distance: 4.76au</p>
                         <p>Type: Gas Giant</p>
             
                         <h6>Planet 8</h6>
-                        <p>Distance: 8.35au</p>
+                        <p>Distance: 10.35au</p>
                         <p>Type: Gas Giant</p>
                         
                         <h6>Planet 9</h6>
-                        <p>Distance: 12.02au</p>
+                        <p>Distance: 13.42au</p>
                         <p>Type: Ice Giant</p>
                         
                         <h6>Planet 10</h6>
-                        <p>Distance: 19.86au</p>
+                        <p>Distance: 21.86au</p>
                         <p>Type: Ice Giant</p>
                         
                         <h6>Planet 11</h6>

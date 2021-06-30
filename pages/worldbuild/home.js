@@ -3,13 +3,9 @@ import styles from '../../styles/Home.module.css';
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import BlogNav from '../../components/blogNav';
-import { useState } from "react";
 import Link from "next/link";
 
 function WbHome() {
-    const [show, setShow] = useState(false);
-    const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
     return (
         <div className={styles.container}>
             <Head>
@@ -39,10 +35,10 @@ function WbHome() {
                 </Row>
                 <Row>
                     <h4>Wiki</h4>
-                    <h6>Species</h6>
+                    <h6><Link href="/worldbuild/wiki/species">Hominid Species</Link></h6>
                     <h6>Religions</h6>
                     <h6>Governments</h6>
-                    <h6><Link href="/worldbuild/encyclopedia/solar">Solar System</Link></h6>
+                    <h6><Link href="/worldbuild/wiki/solar">Solar System</Link></h6>
                 </Row>
             </Container>
         </div>
