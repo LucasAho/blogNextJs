@@ -46,7 +46,7 @@ function PortfolioPage({ posts }) {
                                 it will be regularly updated as I take on new projects. Please feel free to connect via any of the socials I have linked below.
                             </div>
                         </Col>
-                        <Col style={{ height: "500px" }}>
+                        <Col style={{ height: "750px" }}>
                             <Carousel prevLabel="" nextLabel="">
                                 <Carousel.Item interval={5000}>
                                     <img
