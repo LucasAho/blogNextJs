@@ -13,6 +13,9 @@ import Card from 'react-bootstrap/Card';
 import LinkToArticle from "../components/LinkToArticle";
 
 function PortfolioPage({ posts }) {
+    String.prototype.trimEllip = function (length) {
+        return this.length > length ? this.substring(0, length) + "..." : this;
+    }
     return (
         <Container className="justify-content-center">
         <Head>
@@ -124,7 +127,9 @@ function PortfolioPage({ posts }) {
                                 <Card.Body>
                                     <Card.Title>{posts[0].title}</Card.Title>
                                     <Card.Text>
-                                        {posts[0].blurb}
+                                        {
+                                            posts[0].blurb.trimEllip(150)
+                                        }
                                     </Card.Text>
                                     <LinkToArticle id ={posts[0]._id} title={0}/>
                                 </Card.Body>
@@ -135,7 +140,9 @@ function PortfolioPage({ posts }) {
                                 <Card.Body>
                                     <Card.Title>{posts[1].title}</Card.Title>
                                     <Card.Text>
-                                        {posts[1].blurb}
+                                        {
+                                            posts[1].blurb.trimEllip(150)
+                                        }
                                     </Card.Text>
                                     <LinkToArticle id ={posts[1]._id} title={0}/>
                                 </Card.Body>
@@ -144,7 +151,9 @@ function PortfolioPage({ posts }) {
                                 <Card.Body>
                                     <Card.Title>{posts[2].title}</Card.Title>
                                     <Card.Text>
-                                        {posts[2].blurb}
+                                        {
+                                            posts[2].blurb.trimEllip(150)
+                                        }
                                     </Card.Text>
                                     <LinkToArticle id ={posts[2]._id} title={0}/>
                                 </Card.Body>
