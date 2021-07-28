@@ -49,49 +49,70 @@ function PortfolioPage({ posts }) {
                                 it will be regularly updated as I take on new projects and expand my horizons. Please feel free to connect via any of the socials I have linked below.
                             </div>
                         </Col>
-                        <Col style={{ height: "750px" }}>
+                        <Col style={{ height: "600px" }}>
                             <Carousel prevLabel="" nextLabel="">
                                 <Carousel.Item interval={5000}>
+                                    <span className="carousel-helper">
+                                        <img
+                                            className="carousel-img"
+                                            src="https://i.imgur.com/uvF9lH3.jpg"
+                                            alt="Kelso Ridge Slide"
+                                        />
+                                    </span>
+                                </Carousel.Item>
+                                <Carousel.Item className="carousel-helper" interval={5000}>
+                                    <span className="carousel-helper">
                                     <img
                                         className="carousel-img"
                                         src="https://i.imgur.com/6LtK6k6.jpg"
                                         alt="Fulford Slide"
                                     />
+                                    </span>
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
-                                    <img
-                                        className="carousel-img"
-                                        src="https://i.imgur.com/uvF9lH3.jpg"
-                                        alt="Kelso Ridge Slide"
-                                    />
-                                </Carousel.Item>
-                                <Carousel.Item interval={5000}>
+                                    <span className="carousel-helper">
                                     <img
                                         className="carousel-img"
                                         src="https://i.imgur.com/gw9gL7s.jpg"
                                         alt="Climb Boulder"
                                     />
+                                    </span>
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
+                                    <span className="carousel-helper">
                                     <img
                                         className="carousel-img"
-                                        src="https://i.imgur.com/yHyv7Yk.jpg"
-                                        alt="Dead Dog Glissade"
+                                        src="https://i.imgur.com/RwNQJYz.jpg"
+                                        alt="Long's Summit"
                                     />
+                                    </span>
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
+                                    <span className="carousel-helper">
                                     <img
                                         className="carousel-img"
-                                        src="https://i.imgur.com/iR3Bd5r.jpg"
-                                        alt="Climb Dyno"
+                                        src="https://i.imgur.com/WWbhqdJ.jpg"
+                                        alt="KC Death Sign"
                                     />
+                                    </span>
                                 </Carousel.Item>
                                 <Carousel.Item interval={5000}>
+                                    <span className="carousel-helper">
                                     <img
                                         className="carousel-img"
                                         src="https://i.imgur.com/KpdFJUr.jpg"
                                         alt="Torrey's Summit"
                                     />
+                                    </span>
+                                </Carousel.Item>
+                                <Carousel.Item interval={5000}>
+                                    <span className="carousel-helper">
+                                    <img
+                                        className="carousel-img"
+                                        src="https://i.imgur.com/yMRNJsv.jpg"
+                                        alt="Willow Lake Group"
+                                    />
+                                    </span>
                                 </Carousel.Item>
                             </Carousel>
                         </Col>
