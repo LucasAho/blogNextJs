@@ -37,16 +37,16 @@ function PortfolioPage({ posts }) {
                     <Row className="mt-2">
                         <Col md="5" className="light-text">
                             <div className="mb-3">
-                                Hello! I am Lucas Asher, a software developer and aspiring author located out of Colorado.
-                                I spend every moment in pursuit of my goals and cherish learning above all.
+                                Hello! I am Lucas Asher, a web developer, IT professional, and aspiring author located out of Colorado.
+                                I spend every moment in pursuit of my goals, and I cherish learning above all.
                             </div>
                             <div className="my-3">
-                                When I'm not putting working or writing, I enjoy rock climbing and running. Otherwise, you can find me learning new subjects, 
+                                When I'm not busy working and developing my professional skills, I enjoy rock climbing and mountaineering. Otherwise, you can find me learning new subjects, 
                                 writing prose and poetry, and putting together DnD campaigns for my friends.
                             </div>
                             <div className="my-3">
                                 This website navigates from my programming experience to my creative endeavors;
-                                it will be regularly updated as I take on new projects. Please feel free to connect via any of the socials I have linked below.
+                                it will be regularly updated as I take on new projects and expand my horizons. Please feel free to connect via any of the socials I have linked below.
                             </div>
                         </Col>
                         <Col style={{ height: "750px" }}>
