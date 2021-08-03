@@ -15,9 +15,9 @@ import TukrenVerbTable from '../../../components/TukrenVerbTable';
 import TukrenNumberTable from '../../../components/TukrenNumberTable';
 
 export default function Tukren() {
-    const [phonShow, setPhonShow] = useState(false);
-    const [synShow, setSynShow] = useState(false);
-    const [morphShow, setMorphShow] = useState(false);
+    const [phonShow, setPhonShow] = useState(true);
+    const [synShow, setSynShow] = useState(true);
+    const [morphShow, setMorphShow] = useState(true);
 
     function togglePhonology(){
         setPhonShow(!phonShow)
@@ -46,7 +46,35 @@ export default function Tukren() {
                     <h1>Voice of Stone</h1>
                     <Element id='intro' name='intro'>
                         <h2>Introduction</h2>
+                        <p>
+                            Tukren, tongue of stone, is a fictional, naturalistic constructed language designed for the Rohīren people of the planet Maalima. This is the first of my constructed languages and is currently the most developed. 
+                            The dialect of Tukren spoken by the ethnic Hībord in my novels will be an offshoot of this language, developed in the blending of proto-Tukren and the language of the neighboring Hanatu people. 
+                        </p>
+                        <p>
+                            This document details the phonology, syntax, and grammar of proto-Tukren. It serves as a root to all of the Tukren dialects, before the Rohīren colonies spread across the planet's surface.
+                            This language is designed to convey the generic culture of the Rohīren. They are a traditionally xenophobic and religious people, largely content to live out their days in the stone halls of their colonies, working as a collective to further their species. 
+                        </p>
+                            This is represented in the language in a number of ways:
+                        <ul>
+                            <li>
+                                Verb tensing is temporally precise as a result of their long histories and collectivist thinking. 
+                            </li>
+                            <li>
+                                Nouns are articulated to differentiate between colony members and outsiders, and between religious and secular ideas. 
+                            </li>
+                            <li>
+                                Syntax morphs around relgious titles and phrases; the importance of O'radren and Yirtal are topicalized any time the names are uttered. 
+                            </li>
+                            <li>
+                                Root words are heavily influenced by the stone environment they inhabit. 
+                            </li>
+                            <li>
+                                Orthography also finds influence in stone, beginning as their history was etched into their halls with straight lines and sharp angles. 
+                                Eventually, the mediums of ink and parchment would find use, but the straight-lined etchings of the orthography's origin would forever leave its mark on the writing style.   
+                            </li>
+                        </ul>
                     </Element>
+
                     <Element id='phon' name='phon'>
                         <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={togglePhonology}>
                             <hr></hr>
@@ -58,19 +86,22 @@ export default function Tukren() {
                         }}>
                             <p>
                                 Tukren contains 21 consonants, 6 vowels and long vowels, and 4 diphthongs. 
-                                <br/> 
-                                Visit the <a target="_blank" href="https://www.ipachart.com/">IPA Chart</a> to learn how to pronounce these phonemes. 
                             </p>
+                            <p>
+                                These phonemes are based on the International Phonetic Alphabet, a collection of all the sounds producable by human anatomy. 
+                                If you would like to learn more about the IPA and how to pronounce these sounds, visit the <a target="_blank" href="https://www.ipachart.com/">IPA Chart</a> for an excellent source on pronounciation. 
+                            </p>
+                            <p>
+                                Some of these sounds have been latinized for the sake of a Western audience. Letters like ɮ are displayed with their latinized pronounciation first and their IPA symbol marked second (e.g. zl /ɮ/).
+                            </p>
+                        
                             <h3>Phonemes</h3>
-                            
                             <PhonologyTables/>
-                            
                             <h4>Diphthongs</h4>
                             <ul>
                                 <li>ei /ai/ (Pronounced like "I")</li>
                                 <li>au (Pronounced like "aw"</li>
                                 <li>ai /ie/(Pronounced like "A" ) </li>
-                                <li>ee /ei/ (Pronounced like "E")</li>
                             </ul>
 
                             <h3>Phonotactics</h3>
@@ -82,9 +113,10 @@ export default function Tukren() {
                                 <li>A syllable must have an onset if it has a coda.</li>
                             </ul>
                             <h4>Phonemic Stress</h4>
-                            <p>The last syllable is stressed except with irregular words.</p>
+                            <p>The last syllable is always stressed, except in the case of irregular words.</p>
                         </div>
                     </Element>
+
                     <Element id='syntax' name='syntax'>
                         <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={toggleSyntax}>
                             <hr></hr>
@@ -95,26 +127,43 @@ export default function Tukren() {
                             display: synShow ?"block":"none"
                         }}>
                             <h4>Word Order</h4>
-                            <p>S-O-V by default</p>
-                            <p>Tukren is a Head-Final language.</p>
+                            <p>S-O-V by default. This means that the subject of a sentence is said first, then the object, and then the verb last.</p>
                             <h6>Example</h6>
                             <p>The person sees the fish</p>
-                            <p>Di fam dai rĩbik kim</p>
+                            <p>Di'fam dai'rĩbik kim</p>
+
+                            <h4>Head Directionality</h4>
+                            <p>
+                                Tukren is a Head-Final language. This means that in a verb phrase, the verb is spoken last. In a noun phrase, the noun is spoken last. 
+                                This is most easily represented with adjectives. A noun can be used as an adjective by preceding another noun, the final noun being the head of the phrase.
+                            </p>
+
                             <h4>Adjectives</h4>
-                            <p>Adjectives precede their nouns.</p>
-                            <h6>Example</h6>
+                            <p>As stated previously, adjectives always precede their nouns.</p>
+                            <h6>Example 1</h6>
                             <p>The person sees the big fish</p>
-                            <p>Di fam dai tazk ribik kim</p>
+                            <p>Di'fam tazk dai'ribik kim</p>
+
+                            <h6>Example 2</h6>
+                            <p>The person sees the fishy giant</p>
+                            <p>Di'fam ribik dai'tazk kim</p>
+
                             <h4>Adposition</h4>
                             <p>Tukren uses post-position/post-positional phrases in the order of Time->Manner->Place. Post-position words are derived from verbs</p>
-                            <h6>Example</h6>
+                            <h6>Example 1</h6>
                             <p>The man is in the mountain</p>
-                            <p>Di fen do durog wem</p>
+                            <p>Di'fen do'durog wem</p>
+
+                            <h6>Example 2</h6>
+                            <p>The moon shines above the river</p>
+                            <p>Ku'kailrog sau'maruz sazl qib</p>
+
                             <h4>Possession</h4>
                             <p>Possessor preceds possessee</p>
                             <h6>Example</h6>
                             <p>The King's chamber</p>
-                            <p>Si barnakim zlat</p>
+                            <p>Si'barnakim zlat</p>
+
                             <h4>Adverbs</h4>
                             <p>Adverbs can be freely positioned before or after the subject or before the verb.</p>
                             {/*
@@ -125,6 +174,7 @@ export default function Tukren() {
                             */}
                         </div>
                     </Element>
+                    
                     <Element id='deriv' name='deriv'>
                         <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={toggleMorphology}>
                             
