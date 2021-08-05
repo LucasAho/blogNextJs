@@ -41,13 +41,6 @@ export default function DictionaryForm(props){
                                     name="sentence"
                                 />
                             </Form.Group>
-                            <Form.Group controlId="newWord.ControlInput1">
-                                <Form.Label>Image Link</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="image"
-                                />
-                            </Form.Group>
                         </Col>
                         <Button className="my-2 blue-bg" type="submit">
                             Submit

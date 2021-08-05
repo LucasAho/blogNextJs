@@ -13,7 +13,7 @@ import Button from "react-bootstrap/Button";
 import SectionHeader from "../components/portfolioSectionHeader";
 import { Footer } from '../components/footer2';
 
-function Home({ essays, poems }) {
+function Home({ essays, poems, hiking }) {
   
   String.prototype.trimEllip = function (length) {
     return this.length > length ? this.substring(0, length) + "..." : this;
@@ -68,13 +68,53 @@ function Home({ essays, poems }) {
               </Col>
             </Row>
         </Container>
-        <Container className="purple-bg py-3">
+        <Container className="py-3 purple-bg">
+            <Row>
+              <SectionHeader
+                  titleText="Hiking"
+                  subText="A collection of write-ups and photos taken from my adventures in the mountains"
+                  variant="p"
+                  color="light"
+              />
+              <Col md={6}>
+                <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                    <Card.Img variant='top' className="blog-card" src={hiking[0].image} />
+                    <Card.Body>
+                        <Card.Title>{hiking[0].title}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">{hiking[0].dateWritten}</Card.Subtitle>
+                        <Card.Text>
+                            {
+                              hiking[0].blurb.trimEllip(150)
+                            }
+                        </Card.Text>
+                        <LinkToArticle id ={hiking[0]._id} title={0}/>
+                    </Card.Body>
+                </Card>
+              </Col>
+              <Col md={6}>
+                <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
+                    <Card.Img variant='top' className="blog-card" src={hiking[0].image} />
+                    <Card.Body>
+                        <Card.Title>{hiking[0].title}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">{hiking[0].dateWritten}</Card.Subtitle>
+                        <Card.Text>
+                            {
+                              hiking[0].blurb.trimEllip(150)
+                            }
+                        </Card.Text>
+                        <LinkToArticle id ={hiking[0]._id} title={0}/>
+                    </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+        </Container>
+        <Container className="py-3">
             <Row>
               <SectionHeader
                   titleText="Essays"
                   subText="Political and philosophical essays"
                   variant="p"
-                  color="light"
+                  color="dark"
               />
               <Col md={6}>
                 <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
@@ -104,13 +144,13 @@ function Home({ essays, poems }) {
               </Col>
             </Row>
           </Container>
-          <Container className="py-3">
+          <Container className="py-3 purple-bg">
               <Row>
                 <SectionHeader
                     titleText="Poetry"
                     subText="I am slowly learning how to write poetry for the sake of my novel, I publish what I write here. While I have come a long way since my first poem, I am far from mastering the art."
                     variant="p"
-                    color="dark"
+                    color="light"
                 />
                 <Col md={6}>
                   <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
@@ -151,6 +191,8 @@ function Home({ essays, poems }) {
 }
 
 export async function getStaticProps() {
+  const hiking = await API.getTopicsWhere("Hiking");
+  const hikingPosts = await hiking.data.reverse();
   const essays = await API.getTopicsWhere("Philosophy");
   const essayPosts = await essays.data.reverse();
   const poems = await API.getTopicsWhere("Poetry");
@@ -158,7 +200,8 @@ export async function getStaticProps() {
   return {
     props: {
       essays: essayPosts,
-      poems: poemPosts
+      poems: poemPosts,
+      hiking: hikingPosts
     }
   }
 }

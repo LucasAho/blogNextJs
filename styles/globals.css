@@ -94,3 +94,13 @@ a {
 .carousel-helper {
   align-items: center;
 }
+
+.lang-bar {
+  position: sticky;
+  top: 1rem;
+}
+
+.tocLink {
+  text-decoration: underline;
+  cursor: pointer;
+}

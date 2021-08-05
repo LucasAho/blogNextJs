@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import API from '../../api/blog-api';
 import { useState } from 'react';
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import BlogNav from '../../../components/blogNav';
 import LangSideBar from '../../../components/LangSideBar';
+import { Footer } from '../../../components/footer2';
 import { Element } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PhonologyTables from '../../../components/PhonologyTables';
@@ -13,20 +15,33 @@ import TukrenArticleTable from '../../../components/TukrenArticleTable';
 import TukrenPronounTable from '../../../components/TukrenPronounTable';
 import TukrenVerbTable from '../../../components/TukrenVerbTable';
 import TukrenNumberTable from '../../../components/TukrenNumberTable';
+import TukrenLexicon from '../../../components/TukrenLexicon';
 
-export default function Tukren() {
+function Tukren({ words }) {
     const [phonShow, setPhonShow] = useState(true);
     const [synShow, setSynShow] = useState(true);
     const [morphShow, setMorphShow] = useState(true);
+    const [numShow, setNumShow] = useState(true);
+    const [dictShow, setDictShow] = useState(true);
+    const [orthoShow, setOrthoShow] = useState(true);
 
     function togglePhonology(){
         setPhonShow(!phonShow)
+    }
+    function toggleOrtho(){
+        setOrthoShow(!orthoShow)
     }
     function toggleSyntax(){
         setSynShow(!synShow)
     }
     function toggleMorphology(){
         setMorphShow(!morphShow)
+    }
+    function toggleNumbers(){
+        setNumShow(!numShow)
+    }
+    function toggleDiction(){
+        setDictShow(!dictShow)
     }
     return (
         <Container>
@@ -42,8 +57,8 @@ export default function Tukren() {
                 t2Link="/"
             />
             <Row>
-                <Col sm={8}>
-                    <h1>Voice of Stone</h1>
+                <Col sm={10}>
+                    <h1 className={'text-center'}>Voice of Stone - a Guide on Proto-Tukren</h1>
                     <Element id='intro' name='intro'>
                         <h2>Introduction</h2>
                         <p>
@@ -78,7 +93,7 @@ export default function Tukren() {
                     <Element id='phon' name='phon'>
                         <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={togglePhonology}>
                             <hr></hr>
-                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}} icon={['fas', 'angle-down']} />
+                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}} size="lg" icon={['fas', 'angle-down']} />
                             <h2>Phonology</h2>
                         </div>
                         <div style={{
@@ -120,7 +135,7 @@ export default function Tukren() {
                     <Element id='syntax' name='syntax'>
                         <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={toggleSyntax}>
                             <hr></hr>
-                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}} icon={['fas', 'angle-down']} />
+                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}}  size="lg" icon={['fas', 'angle-down']} />
                             <h2>Syntax</h2>
                         </div>
                         <div style={{
@@ -142,7 +157,7 @@ export default function Tukren() {
                             <p>As stated previously, adjectives always precede their nouns.</p>
                             <h6>Example 1</h6>
                             <p>The person sees the big fish</p>
-                            <p>Di'fam tazk dai'ribik kim</p>
+                            <p>Di'fam tazk kul'ribik kim</p>
 
                             <h6>Example 2</h6>
                             <p>The person sees the fishy giant</p>
@@ -166,12 +181,10 @@ export default function Tukren() {
 
                             <h4>Adverbs</h4>
                             <p>Adverbs can be freely positioned before or after the subject or before the verb.</p>
-                            {/*
-                            <h4>Other Exceptions</h4>
+                            <h4>Other Exceptions in Word Order</h4>
                             <p>S-IDO-DO-V when speaking of multiple objects</p>
                             <p>Topic of a sentence can replace the Subject, and it is the job of articulation to specificy part of speech</p>
                             <p>The God Radren is always the topic of a statement, and is always spoken first.</p>
-                            */}
                         </div>
                     </Element>
                     
@@ -179,24 +192,31 @@ export default function Tukren() {
                         <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={toggleMorphology}>
                             
                             <hr></hr>
-                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}} icon={['fas', 'angle-down']} />
+                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}} size="lg"  icon={['fas', 'angle-down']} />
                             <h2>Morphology</h2>
                         </div>
                         <div style={{
                             display: morphShow ?"block":"none"
                         }}>
-                            <p>Plurality marked with 'ro-'</p>
                             <h3>Noun Morphology</h3>
                             <h4>Articles</h4>
                             <TukrenArticleTable/>
                             <h4>Pronouns</h4>
                             <TukrenPronounTable/>
                             <h4>Affixes</h4>
+                            <h6>Plurality</h6>
                             <p>Plurality is marked by the ro- prefix</p>
+                            <h6>Association</h6>
                             <p>A person associated with... is marked by the na- prefix. In English this is done with the -er suffix, as in "hunter".</p>
+                            <h6>Negation</h6>
+                            <p>Nouns are negated with the ha- prefix.</p>
+                            
                             <h3>Verb Morphology</h3>
-                            <h4>Auxilliary Verbs</h4>
+                            <h4>Verb Tense</h4>
                             <TukrenVerbTable/>
+                            <p>
+                                The tense of a verb is indicated with a tense marker following the full verb phrase. 
+                            </p>
                             <h5>Examples</h5>
                             <Row>
                                 <Col>
@@ -205,16 +225,16 @@ export default function Tukren() {
                                         The First King carved Bordekya.
                                     </p>
                                     <p>
-                                        O tadin barakim sau bordekya gosuhf nodof.
+                                        O'tadin barakim sau'bordekya gosuhf nodof.
                                     </p>
                                 </Col>
                                 <Col>
                                     <h6>Imperfective Aspect</h6>
                                     <p>
-                                        The carving guild was forming.
+                                        The carving guild was congregating.
                                     </p>
                                     <p>
-                                        Di roheihli mot nodin
+                                        Di'roheihli motpar nodin
                                     </p>
                                 </Col>
                                 <Col>
@@ -223,25 +243,125 @@ export default function Tukren() {
                                         The colony searched.
                                     </p>
                                     <p>
-                                        Di famot damis noduk.
+                                        Di'famot damis noduk.
                                     </p>
+                                </Col>
+                            </Row>
+                            <h4>Linking Verbs</h4>
+                            <p>
+                                A linking verb links the subject of a sentence to its subject complement. This is used to describe or re-identify the noun. 
+                                In Tukren, there are three linking verbs: tec for first person, doc for second person, and yen for third person. 
+                            </p>
+                            <Row>
+                                <h5>Examples</h5>
+                                <Col>
+                                    <h6>First Person</h6>
+                                    <p>I am unmoving</p>
+                                    <p>Y tec haket</p>
+                                </Col>
+                                <Col>
+                                    <h6>Second Person</h6>
+                                    <p>He is angry</p>
+                                    <p>Bos doc gakep</p>
+                                </Col>
+                                <Col>
+                                    <h6>Third Person</h6>
+                                    <p>That is not a fish</p>
+                                    <p>Birm yen ku'haribik</p>
+                                </Col>
+                            </Row>
+                            <h4>Passive Verbs</h4>
+                            <p>
+                                Passive verbs are recieved by the subject, rather than by the object.
+                            </p>
+                            <p>
+                                In Tukren, passive verbs are marked with the suffix -par.
+                            </p>
+                            <h5>Example</h5>
+                            <p>
+                                The fish is eaten
+                            </p>
+                            <p>
+                                Ku'ribik gormpar
+                            </p>
+
+                            <h4>Transitive Verbs</h4>
+                            <p>
+                                A transitive verb requires a object to receive the verb. In English, this is seen in verbs like 'give' and 'need'.
+                            </p>
+                            <p>
+                                In Tukren, transitive verb phrases are ended with the auxilliary verb atiz.
+                            </p>
+                            <h5>Example</h5>
+                            <p>The colony needs the mountain.</p>
+                            <p>Di'famot sau'durog kob atiz</p>
+                        </div>
+                    </Element>
+                    <Element id='nums' name='nums'>
+                        <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={toggleNumbers}>
+                            <hr></hr>
+                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}}  size="lg" icon={['fas', 'angle-down']} />
+                            <h2>Numbers</h2>
+                        </div>
+                        <div style={{
+                            display: numShow ?"block":"none"
+                        }}>
+                            <p>Tukren uses a base 6 number system. Hexagon is the bestagon afterall.</p>
+                            <Row>
+                                <Col>
+                                    <TukrenNumberTable/>
+                                </Col>
+                                <Col>
+                                    <h4>Ordinal Numbers</h4>
+                                    <p>First : Tadin</p>
+                                    <p>Second : Tadima</p>
+                                    <p>Third : Tabasl</p>
                                 </Col>
                             </Row>
                         </div>
                     </Element>
-                    <Element id='nums' name='nums'>
-                        <h4>Numbers</h4>
-                        <p>Tukren uses a base 6 number system. Hexagon is the bestagon afterall.</p>
-                        <TukrenNumberTable/>
+                    <Element id='ortho' name='ortho'>
+                        <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={toggleOrtho}>
+                            <hr></hr>
+                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}}  size="lg" icon={['fas', 'angle-down']} />
+                            <h2>Orthography</h2>
+                        </div>
+                        <div style={{
+                            display: orthoShow ?"block":"none"
+                        }}>
+                            <p>Work in progress</p>
+                        </div>
                     </Element>
                     <Element id='words' name='words'>
-                        <h6><Link href="/worldbuild/conlang/tuk/lexicon">Dictionary</Link></h6>
+                        <div style={{flexDirection: 'row', justifyContent: 'space-between'}} onClick={toggleDiction}>
+                            <hr></hr>
+                            <FontAwesomeIcon style={{float: 'right', color: "#bec7ca"}}  size="lg" icon={['fas', 'angle-down']} />
+                            <h2>Lexicon</h2>
+                        </div>
+                        <div style={{
+                            display: dictShow ?"block":"none"
+                        }}>
+                            <p></p>
+                            <TukrenLexicon words={words}/>
+                        </div>
                     </Element>
                 </Col>
                 <Col sm={2}>
                     <LangSideBar/>
                 </Col>
             </Row>
+            <Footer/>
         </Container>
     )
 }
+
+export async function getStaticProps() {
+    const res = await API.getAllWords();
+    return {
+        props: {
+            words: res.data
+        }
+    }
+}
+
+export default Tukren;

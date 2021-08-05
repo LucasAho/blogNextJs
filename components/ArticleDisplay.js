@@ -27,7 +27,13 @@ export default class ArticleLoader extends Component {
                 </Row>
                 <Row className='mr-1 mt-3'>
                     {article.paragraphs.map((p,i) => {
-                        if(p.length > 1) {
+                        if (p.startsWith('https://')) {
+                            return (
+                                <div key={i++}>
+                                    <img className="my-1 article-image" style={{maxWidth: '100%'}} src={p}/>
+                                </div>
+                            )
+                        } else if(p.length > 1) {
                             return (
                                 <div key={i++}>
                                     {p} 
