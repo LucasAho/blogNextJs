@@ -8,14 +8,16 @@ import Pagination from "react-bootstrap/Pagination";
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import BlogNav from "./blogNav";
-import DictionaryForm from "./DictionaryForm";
 
 
 function Lexicon(props){
     const words = props.words
     const [word, setWord] = useState({});
-    const tableSorter = type => {
+
+    /////////////////////////////////////////////
+    ///////////// TABLE SORT ////////////////////
+    /////////////////////////////////////////////
+    /*const tableSorter = type => {
         return words.sort(function (a, b) {
             var wordA = a[type].toUpperCase(); // ignore upper and lowercase
             var wordB = b[type].toUpperCase(); // ignore upper and lowercase
@@ -28,26 +30,80 @@ function Lexicon(props){
             return 0;
         })
     };
-    
-    const [wordObj, setWords] = useState(()=>tableSorter('conlang'));
 
-    let active = 1;
+    const setWords = (fn) => {
+        //console.log(fn);
+        let newSort = tableSorter(fn);
+        changeDictionary(dictionaryMarker(newSort));
+        changeWordSet(pageChange(active));
+    }
+    }*/
+    /////////////////////////////////////////////
+    ///////////// DICTIONARY ////////////////////
+    /////////////////////////////////////////////
+    const dictionaryMarker = inputArray => {
+            
+        var perChunk = 15 // items per chunk    
+        //console.log(inputArray)
+        var result = inputArray.reduce((resultArray, item, index) => { 
+            const chunkIndex = Math.floor(index/perChunk)
+
+            if(!resultArray[chunkIndex]) {
+                resultArray[chunkIndex] = [] // start a new chunk
+            }
+            resultArray[chunkIndex].push(item)
+
+            return resultArray
+        }, []);
+
+        return result;
+    }
+
+    const [dictionary, changeDictionary] = useState(dictionaryMarker(words));
+
+    /////////////////////////////////////////////
+    ///////////// PAGINATION ////////////////////
+    /////////////////////////////////////////////
+    const [active, setActive] = useState(1);
     let items = [];
-    for (let number = 1; number <= 5; number++) {
+
+    for (let number = 1; number <= dictionary.length; number++) {
         items.push(
-            <Pagination.Item key={number} active={number === active} >
+            <Pagination.Item className={(active === number ? 'active ' : '')} key={number} active={number === active} onClick={(event) => paginationClicked(event)}>
             {number}
             </Pagination.Item>,
         );
+    }
+
+    const paginationClicked = (event) => {
+        var itemClicked = event.target.text;
+        setActive(itemClicked);
+        changeWordSet(pageChange(itemClicked))
     }
 
     const paginationBasic = (
     <div>
         <Pagination>{items}</Pagination>
         <br />
-
     </div>
     );
+
+    const pageChange = curActive => {
+        return(
+            dictionary[curActive - 1].map((word, i)=> {
+                return(
+                    <tr key={i} onClick={()=> setWord(word)}>
+                        <th scope="row">{word.conlang}</th>
+                        <td>{word.pos}</td>
+                        <td>{word.english}</td>
+                    </tr>
+                )
+                
+            })
+        );
+    }
+    const [wordSet, changeWordSet] = useState(pageChange(active));
+
 
     return(
         <Container>
@@ -80,35 +136,30 @@ function Lexicon(props){
                     <tr>
                         <th scope="col" >
                             Tukren
-                            <Button onClick={() => setWords(tableSorter("conlang"))}>
+                            {/*<Button onClick={() => setWords("conlang")}>
                                 <FontAwesomeIcon icon={['fas', 'sort']} />
-                            </Button>
+        </Button>*/}
                         </th>
                         <th scope="col">
                             Part of Speech
-                            <Button onClick={() => setWords(tableSorter("pos"))}>
+                            {/* 
+                            <Button onClick={() => setWords("pos")}>
                                 <FontAwesomeIcon icon={['fas', 'sort']} />
                             </Button>
+                            */}
                         </th>
                         <th scope="col">
                             English
-                            <Button onClick={() => setWords(tableSorter("english"))}>
+                            {/*}
+                            <Button onClick={() => setWords("english")}>
                                 <FontAwesomeIcon icon={['fas', 'sort']} />
                             </Button>
+                        */}
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {wordObj.map((word, i)=> {
-                        return(
-                            <tr key={i++} onClick={()=> setWord(word)}>
-                                <th scope="row">{word.conlang}</th>
-                                <td>{word.pos}</td>
-                                <td>{word.english}</td>
-                            </tr>
-                        )
-                        
-                    })}
+                    {wordSet}
                 </tbody>
                 {paginationBasic}
             </Table>

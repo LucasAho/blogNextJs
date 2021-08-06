@@ -293,7 +293,7 @@ export default function TukrenNumberTable() {
         return(
         numberData[curActive - 1].map((num, i) => {
             return (
-                <tr>
+                <tr key={i}>
                     <td width='33%'>{num.number}</td>
                     <td width='33%'>{num.baseSix}</td>
                     <td width='33%'>{num.baseTen}</td>

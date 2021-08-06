@@ -76,6 +76,7 @@ function Home({ essays, poems, hiking }) {
                   variant="p"
                   color="light"
               />
+              {/*
               <Col md={6}>
                 <Card className="my-1 justify-content-center flex-grow-1" style={{ width: '100%' }}>
                     <Card.Img variant='top' className="blog-card" src={hiking[0].image} />
@@ -106,6 +107,7 @@ function Home({ essays, poems, hiking }) {
                     </Card.Body>
                 </Card>
               </Col>
+                */}
             </Row>
         </Container>
         <Container className="py-3">
