@@ -17,7 +17,7 @@ function Lexicon(props){
     /////////////////////////////////////////////
     ///////////// TABLE SORT ////////////////////
     /////////////////////////////////////////////
-    /*const tableSorter = type => {
+    const tableSorter = type => {
         return words.sort(function (a, b) {
             var wordA = a[type].toUpperCase(); // ignore upper and lowercase
             var wordB = b[type].toUpperCase(); // ignore upper and lowercase
@@ -30,7 +30,7 @@ function Lexicon(props){
             return 0;
         })
     };
-
+    /*
     const setWords = (fn) => {
         //console.log(fn);
         let newSort = tableSorter(fn);
@@ -41,11 +41,13 @@ function Lexicon(props){
     /////////////////////////////////////////////
     ///////////// DICTIONARY ////////////////////
     /////////////////////////////////////////////
-    const dictionaryMarker = inputArray => {
-            
+    const dictionaryMarker = () => {
+        let sortedArray = tableSorter("conlang");
+        
+
         var perChunk = 15 // items per chunk    
         //console.log(inputArray)
-        var result = inputArray.reduce((resultArray, item, index) => { 
+        var result = sortedArray.reduce((resultArray, item, index) => { 
             const chunkIndex = Math.floor(index/perChunk)
 
             if(!resultArray[chunkIndex]) {
@@ -59,7 +61,7 @@ function Lexicon(props){
         return result;
     }
 
-    const [dictionary, changeDictionary] = useState(dictionaryMarker(words));
+    const [dictionary, changeDictionary] = useState(dictionaryMarker());
 
     /////////////////////////////////////////////
     ///////////// PAGINATION ////////////////////

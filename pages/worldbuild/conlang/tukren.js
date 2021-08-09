@@ -62,14 +62,15 @@ function Tukren({ words }) {
                     <Element id='intro' name='intro'>
                         <h2>Introduction</h2>
                         <p>
-                            Tukren, tongue of stone, is a fictional, naturalistic constructed language designed for the Rohīren people of the planet Maalima. This is the first of my constructed languages and is currently the most developed. 
-                            The dialect of Tukren spoken by the ethnic Hībord in my novels will be an offshoot of this language, developed in the blending of proto-Tukren and the language of the neighboring Hanatu people. 
+                            Tukren, tongue of stone, is a fictional, naturalistic constructed language I designed for the Rohīren people of the planet Maalima. It is the first of my constructed languages, a fact that no doubt makes itself apparent in this documentation. 
+                            As a proto-language, Tukren serves only as a basis for the dialects spoken in my novels. For instance, the Hĭbord dialect used in my first novel will be a derivation of a blend of proto-Tukren and the language of the neighboring Hanatu. 
+                            This document details the phonology, syntax, and grammar of proto-Tukren, and explains how to write and speak the language for any seeking to learn.
                         </p>
                         <p>
-                            This document details the phonology, syntax, and grammar of proto-Tukren. It serves as a root to all of the Tukren dialects, before the Rohīren colonies spread across the planet's surface.
-                            This language is designed to convey the generic culture of the Rohīren. They are a traditionally xenophobic and religious people, largely content to live out their days in the stone halls of their colonies, working as a collective to further their species. 
-                        </p>
+                            It serves as a root to all of the Tukren dialects, before the Rohīren colonies spread across the planet's surface.
+                            My goal in developing the language was to convey the generic culture of the Rohīren. They are a traditionally xenophobic and religious people, largely content to live out their days in the stone halls of their colonies, working as a collective to further their species. 
                             This is represented in the language in a number of ways:
+                        </p>
                         <ul>
                             <li>
                                 Verb tensing is temporally precise as a result of their long histories and collectivist thinking. 
@@ -115,20 +116,24 @@ function Tukren({ words }) {
                             <h4>Diphthongs</h4>
                             <ul>
                                 <li>ei /ai/ (Pronounced like "I")</li>
-                                <li>au (Pronounced like "aw"</li>
+                                <li>au (Pronounced like "aw")</li>
                                 <li>ai /ie/(Pronounced like "A" ) </li>
                             </ul>
 
                             <h3>Phonotactics</h3>
                             <h4>Syllable Shape</h4>
                             <p>(C)V(C)(C)</p>
-                            <p><b>Exceptions</b></p>
+                            <h6>Rules & Exceptions</h6>
                             <ul>
                                 <li>Phonemes -y, -h, -w will never occur in the syllable coda.</li>
                                 <li>A syllable must have an onset if it has a coda.</li>
                             </ul>
                             <h4>Phonemic Stress</h4>
-                            <p>The last syllable is always stressed, except in the case of irregular words.</p>
+                            <p>
+                                The last syllable is always stressed, except in the case of irregular words. 
+                                One such cause of irregularity can be seen in words with a long vowel in their second to last syllable. The stress in such words is placed on the second-to-last syllable.
+                                For example: Hīren will be pronounced as /HEE/-/ren/ rather than /hee/-/REN/.
+                            </p>
                         </div>
                     </Element>
 
@@ -142,49 +147,82 @@ function Tukren({ words }) {
                             display: synShow ?"block":"none"
                         }}>
                             <h4>Word Order</h4>
-                            <p>S-O-V by default. This means that the subject of a sentence is said first, then the object, and then the verb last.</p>
-                            <h6>Example</h6>
-                            <p>The person sees the fish</p>
-                            <p>Di'fam dai'rĩbik kim</p>
-
-                            <h4>Head Directionality</h4>
                             <p>
-                                Tukren is a Head-Final language. This means that in a verb phrase, the verb is spoken last. In a noun phrase, the noun is spoken last. 
-                                This is most easily represented with adjectives. A noun can be used as an adjective by preceding another noun, the final noun being the head of the phrase.
+                                Tukren has a default word order of S-O-V, or subject-object-verb. Tukren also allows for topicalized sentences, in which the word order is switched to place emphasis on the topic of the sentence instead of the subject. In such cases, the articulation of each nouns differentiates between a topic and subject.
+                                Additionally, Tukren is primarily Head-Final, meaning that the head of a noun or verb phrase follows its complements. 
                             </p>
-
+                            <p>
+                                When dealing with multiple objects, like in sentences with an indirect-object, the sentence order becomes S-IDO-DO-V.
+                            </p>
+                            <p>
+                                Note that formal speech always places the Hīren God Radren as the topic of a statement so that his name is always spoken first. Breaking this rule is a social taboo in any colony. 
+                            </p>
+                            <h5>Examples</h5>
+                            <Row>
+                                <Col>
+                                    <h6>Default Word Order</h6>
+                                    <p>The person sees the fish</p>
+                                    <p>Di'fam dai'rĩbik kim</p>
+                                </Col>
+                                <Col>
+                                    <h6>Topicalized Word Order</h6>
+                                    <p>The king hears God</p>
+                                    <p>Do'radren di'barnakim mis</p>
+                                </Col>
+                            </Row>
                             <h4>Adjectives</h4>
-                            <p>As stated previously, adjectives always precede their nouns.</p>
-                            <h6>Example 1</h6>
-                            <p>The person sees the big fish</p>
-                            <p>Di'fam tazk kul'ribik kim</p>
-
-                            <h6>Example 2</h6>
-                            <p>The person sees the fishy giant</p>
-                            <p>Di'fam ribik dai'tazk kim</p>
-
+                            <p>Adjectives always precede the head of the noun phrase.</p>
+                            <Row>
+                                <h5>Examples</h5>
+                                <Col>
+                                    <p>The person sees the big fish</p>
+                                    <p>Di'fam tazk kul'ribik kim</p>
+                                </Col>
+                                <Col>
+                                    <p>The person sees the fishy big thing</p>
+                                    <p>Di'fam ribik sau'tazk kim</p>
+                                </Col>
+                            </Row>
+                            
                             <h4>Adposition</h4>
-                            <p>Tukren uses post-position/post-positional phrases in the order of Time->Manner->Place. Post-position words are derived from verbs</p>
-                            <h6>Example 1</h6>
-                            <p>The man is in the mountain</p>
-                            <p>Di'fen do'durog wem</p>
-
-                            <h6>Example 2</h6>
-                            <p>The moon shines above the river</p>
-                            <p>Ku'kailrog sau'maruz sazl qib</p>
-
+                            <p>Tukren uses post-position/post-positional phrases. In the case of multiple postpositions, they are placed in the order of Time->Manner->Place.</p>
+                            <Row>
+                                <h5>Examples</h5>
+                                <Col>
+                                    <p>The moon shines above the river</p>
+                                    <p>Ku'kailrog qib sau'maruz sazl</p>
+                                </Col>
+                                <Col>
+                                    <p>The moon shines above the river at night.</p>
+                                    <p>Ku'kailrog wod con qib sau'maruz sazl</p>
+                                </Col>
+                            </Row>
                             <h4>Possession</h4>
-                            <p>Possessor preceds possessee</p>
-                            <h6>Example</h6>
-                            <p>The King's chamber</p>
-                            <p>Si'barnakim zlat</p>
-
+                            <p>The possessor precedes the possessee when showing possession. The possessor is marked with its corrosponding gentitive article, while the possessee is either left without an article or marked with its normal case.</p>
+                            <Row>
+                                <h5>Examples</h5>
+                                <Col>
+                                    <p>The King's chamber</p>
+                                    <p>Mi'barnakim zlat</p>
+                                </Col>
+                                <Col>
+                                    <p>The path of the Temple.</p>
+                                    <p>Dom'yirtal si'biwar</p>
+                                </Col>
+                            </Row>
                             <h4>Adverbs</h4>
-                            <p>Adverbs can be freely positioned before or after the subject or before the verb.</p>
-                            <h4>Other Exceptions in Word Order</h4>
-                            <p>S-IDO-DO-V when speaking of multiple objects</p>
-                            <p>Topic of a sentence can replace the Subject, and it is the job of articulation to specificy part of speech</p>
-                            <p>The God Radren is always the topic of a statement, and is always spoken first.</p>
+                            <p>Adverbs can be positioned somewhat freely: before or after the subject or before the verb.</p>
+                            <Row>
+                                <h5>Examples</h5>
+                                <Col>
+                                    <p>Bordekya is very large.</p>
+                                    <p>Bordekya tazk sit yen.</p>
+                                </Col>
+                                <Col>
+                                    <p>The river is very long.</p>
+                                    <p>Maruz sit zun yen.</p>
+                                </Col>
+                            </Row>
                         </div>
                     </Element>
                     
@@ -200,14 +238,59 @@ function Tukren({ words }) {
                         }}>
                             <h3>Noun Morphology</h3>
                             <h4>Articles</h4>
+                            <p>
+                                Proto-Tukren does not differentiate between definite and indefinite articles.
+                                Instead articulation is broken down into six cases: nominative, accussative, genative, dative, locative, and instrumental. 
+                                It is further divided into the genders of Neutral, Unfamiliar/Alien, Inanimate, and Formal/Religious.  
+                            </p>
+                            <ul>Case
+                                <li>
+                                    Nominative nouns are the subject of a sentence. 
+                                </li>
+                                <li>
+                                    Accussative marks the direct object. 
+                                </li>
+                                <li>
+                                    Genative marks a noun's origin or possessor.
+                                </li>
+                                <li>
+                                    Dative marks the indirect object.
+                                </li>
+                                <li>
+                                    Instrumental marks a noun used to achieve the verb.
+                                </li>
+                            </ul>
+                            <ul>Gender
+                                <li>
+                                    Neutral nouns refer to most nouns referencing fellow colony members or herd animals owned by the colony. 
+                                </li>
+                                <li>
+                                    Unfamiliar/Alien nouns typically refer to people or animals from outside the colony. To refer to a fellow colony member with this article would be considered an insult.
+                                </li>
+                                <li>
+                                    Inanimate nouns are any that are not considered sentient. While this obviously refers to tools and landmarks, it is important to note that stone is not considered inanimate in certain context and may be refered to with any of the other genders.
+                                </li>
+                                <li>
+                                    Formal/religious articles are used with nouns that refer to Radren, the Temple, any religious practices, and any contexts in which one must convey respect.
+                                </li>
+                            </ul>
+                            <p>
+                                Due to the complexity of articulation, much of informal speech neglects the use of articulation. However, formal speech and irregular sentences rely on articulation to convey correct meaning. 
+                            </p>
                             <TukrenArticleTable/>
                             <h4>Pronouns</h4>
+                            <p>
+                                Pronouns are separated into five cases, and then further divided into eight points of view.
+                                Most of these cases are shared with those used in articulation. An important disctinction is the difference between a possessive pronoun and a genitive pronoun.
+                                A possessive pronoun is like 'my' in English. "My home" or "Yani dek". A genitive pronoun is like "mine". "That is mine" or "Birm fuyo yen". 
+                            </p>
                             <TukrenPronounTable/>
+
                             <h4>Affixes</h4>
                             <h6>Plurality</h6>
-                            <p>Plurality is marked by the ro- prefix</p>
+                            <p>Plurality is marked by the ro- prefix. This is where the word Rohīren comes from: Ro means many, Hīren means a person of stone</p>
                             <h6>Association</h6>
-                            <p>A person associated with... is marked by the na- prefix. In English this is done with the -er suffix, as in "hunter".</p>
+                            <p>--A person associated with-- is marked by the na- prefix. In English this is done with the -er suffix, as in "hunter".</p>
                             <h6>Negation</h6>
                             <p>Nouns are negated with the ha- prefix.</p>
                             
@@ -257,17 +340,17 @@ function Tukren({ words }) {
                                 <Col>
                                     <h6>First Person</h6>
                                     <p>I am unmoving</p>
-                                    <p>Y tec haket</p>
+                                    <p>Haket y tec</p>
                                 </Col>
                                 <Col>
                                     <h6>Second Person</h6>
                                     <p>He is angry</p>
-                                    <p>Bos doc gakep</p>
+                                    <p>Gakep bos doc</p>
                                 </Col>
                                 <Col>
                                     <h6>Third Person</h6>
                                     <p>That is not a fish</p>
-                                    <p>Birm yen ku'haribik</p>
+                                    <p>Ku'haribik birm yen</p>
                                 </Col>
                             </Row>
                             <h4>Passive Verbs</h4>
@@ -293,8 +376,8 @@ function Tukren({ words }) {
                                 In Tukren, transitive verb phrases are ended with the auxilliary verb atiz.
                             </p>
                             <h5>Example</h5>
-                            <p>The colony needs the mountain.</p>
-                            <p>Di'famot sau'durog kob atiz</p>
+                            <p>She eats the fish</p>
+                            <p>Fi kul'ribik gorm atiz</p>
                         </div>
                     </Element>
                     <Element id='nums' name='nums'>
