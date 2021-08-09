@@ -7,7 +7,7 @@ export default function PhonologyTable() {
     return(
         <Container>
             <Row>
-                <Col md={8}>
+                <Col lg={8}>
                     <h4>Consonants</h4>
                     <Table className="text-center mx-auto" striped bordered>
                         <thead>
@@ -77,7 +77,7 @@ export default function PhonologyTable() {
                         </tbody>
                     </Table>
                 </Col>
-                <Col md={4}>
+                <Col lg={4}>
                     <h4>Vowels</h4>
                     <Table className="text-center mx-auto" striped bordered>
                         <thead>

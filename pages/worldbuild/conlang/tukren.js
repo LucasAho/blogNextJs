@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Table from 'react-bootstrap/Table';
 import BlogNav from '../../../components/blogNav';
 import LangSideBar from '../../../components/LangSideBar';
 import { Footer } from '../../../components/footer2';
@@ -128,6 +129,7 @@ function Tukren({ words }) {
                                 <li>Phonemes -y, -h, -w will never occur in the syllable coda.</li>
                                 <li>A syllable must have an onset if it has a coda.</li>
                             </ul>
+                            
                             <h4>Phonemic Stress</h4>
                             <p>
                                 The last syllable is always stressed, except in the case of irregular words. 
@@ -155,6 +157,9 @@ function Tukren({ words }) {
                                 When dealing with multiple objects, like in sentences with an indirect-object, the sentence order becomes S-IDO-DO-V.
                             </p>
                             <p>
+                                Interrogative word order becomes V-S-O.
+                            </p>
+                            <p>
                                 Note that formal speech always places the Hīren God Radren as the topic of a statement so that his name is always spoken first. Breaking this rule is a social taboo in any colony. 
                             </p>
                             <h5>Examples</h5>
@@ -168,6 +173,11 @@ function Tukren({ words }) {
                                     <h6>Topicalized Word Order</h6>
                                     <p>The king hears God</p>
                                     <p>Do'radren di'barnakim mis</p>
+                                </Col>
+                                <Col>
+                                    <h6>Interrogative Word Order</h6>
+                                    <p></p>
+                                    <p></p>
                                 </Col>
                             </Row>
                             <h4>Adjectives</h4>
@@ -223,6 +233,16 @@ function Tukren({ words }) {
                                     <p>Maruz sit zun yen.</p>
                                 </Col>
                             </Row>
+
+                            <h4>Conjunctions</h4>
+                            <p>Proto-Tukren has a small set of conjunctions, used to combine ideas and compare sentences.</p>
+                            <h6>Coordinating Conjunctions</h6>
+                            <p>
+                                'And' has two forms. <br/> Ta: marking the end item of a list. (e.g. Fire and stone: Kezl ta ren). <br/> Tam: combines two complete statements. (e.g. EXAMPLE HERE) 
+                            </p>
+                            <p>
+                                The word 'Kot' is used as Enlgish uses 'but' to contrast two ideas.
+                            </p>
                         </div>
                     </Element>
                     
@@ -275,7 +295,7 @@ function Tukren({ words }) {
                                 </li>
                             </ul>
                             <p>
-                                Due to the complexity of articulation, much of informal speech neglects the use of articulation. However, formal speech and irregular sentences rely on articulation to convey correct meaning. 
+                                Due to its complexity, much of the articulation system is neglected in informal speech. Formal speech and irregular sentences however, rely on articulation to convey correct meaning. 
                             </p>
                             <TukrenArticleTable/>
                             <h4>Pronouns</h4>
@@ -286,6 +306,68 @@ function Tukren({ words }) {
                             </p>
                             <TukrenPronounTable/>
 
+                            <h4>Determiners</h4>
+                            <p>Determiners go before the noun they describe</p>
+                            <ul>
+                                <li>This/these: dimo</li>
+                                <li>Other: </li>
+                            </ul>
+
+                            <h4>Interrogative Pronouns</h4>
+                            <ul>
+                                <li>hangun: which</li>
+                                <li>hes: who</li>
+                                <li>hen: to whom</li>
+                                <li>pat: how</li>
+                                <li>his: where at</li>
+                                <li>wahum: why</li>
+                                <li>was: what</li>
+                                <li>wok: when</li>
+                            </ul>
+                            <Row>
+                                <Table striped bordered size="sm">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">English</th>
+                                            <th scope="col">Nom. (who)</th>
+                                            <th scope="col">Acc. (whom)</th>
+                                            <th scope="col">Gen. (whose)</th>
+                                            <th scope="col">Dativ. (to whom)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Who</th>
+                                            <td>hes</td>
+                                            <td>hon</td>
+                                            <td>hosi</td>
+                                            <td>hen</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                                <Table striped bordered size="sm">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">Where At</th>
+                                            <th scope="col">Where To</th>
+                                            <th scope="col">Where From</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>his</td>
+                                            <td>hisep</td>
+                                            <td>hiser</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                                <p>
+                                    How to : wasep
+                                </p>
+                            </Row>
+
                             <h4>Affixes</h4>
                             <h6>Plurality</h6>
                             <p>Plurality is marked by the ro- prefix. This is where the word Rohīren comes from: Ro means many, Hīren means a person of stone</p>
@@ -293,6 +375,8 @@ function Tukren({ words }) {
                             <p>--A person associated with-- is marked by the na- prefix. In English this is done with the -er suffix, as in "hunter".</p>
                             <h6>Negation</h6>
                             <p>Nouns are negated with the ha- prefix.</p>
+                            <h6>Usage</h6>
+                            <p>Objects can be marked as tools of a craft with the sun- or suns- prefix. A fishing rod for instance, would be called suribec. </p>
                             
                             <h3>Verb Morphology</h3>
                             <h4>Verb Tense</h4>
@@ -367,6 +451,14 @@ function Tukren({ words }) {
                             <p>
                                 Ku'ribik gormpar
                             </p>
+
+                            <h4>Verb Modality</h4>
+                            <ul>
+                                <li>Have to : fit</li>
+                                <li>Will to : faid</li>
+                                <li>able to : post</li>
+                                <li>supposed to : hip</li>
+                            </ul>
 
                             <h4>Transitive Verbs</h4>
                             <p>

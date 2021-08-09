@@ -13,6 +13,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Lexicon(props){
     const words = props.words
     const [word, setWord] = useState({});
+    
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
     /////////////////////////////////////////////
     ///////////// TABLE SORT ////////////////////
@@ -95,9 +99,9 @@ function Lexicon(props){
             dictionary[curActive - 1].map((word, i)=> {
                 return(
                     <tr key={i} onClick={()=> setWord(word)}>
-                        <th scope="row">{word.conlang}</th>
+                        <th scope="row">{capitalizeFirstLetter(word.conlang)}</th>
                         <td>{word.pos}</td>
-                        <td>{word.english}</td>
+                        <td>{capitalizeFirstLetter(word.english)}</td>
                     </tr>
                 )
                 
@@ -107,16 +111,17 @@ function Lexicon(props){
     const [wordSet, changeWordSet] = useState(pageChange(active));
 
 
+
     return(
         <Container>
             {word.english !== undefined ?
             <>
             <Card>
-                <Card.Header><h5>{word.conlang}</h5></Card.Header>
+                <Card.Header><h5>{capitalizeFirstLetter(word.conlang)}</h5></Card.Header>
                 <Card.Body>
                     <Row>
                         <Col>
-                            <Card.Text>English Definition: {word.english}</Card.Text>
+                            <Card.Text>English Definition: {capitalizeFirstLetter(word.english)}</Card.Text>
                             <Card.Text>
                                 Part of Speech: {word.pos}
                             </Card.Text>
